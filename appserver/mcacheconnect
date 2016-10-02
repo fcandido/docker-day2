@@ -1,0 +1,165 @@
+#!/usr/bin/perl
+
+
+# This is a master memcached script
+# Created to have a better integration to Cacti and Nagios
+# Author: Wilton Paulo (wilton.p.silva@gmail.com)
+# 13 Aug 2009 | Created
+# 25 Aug 2011 | Statistics Implemented / Option Dump doesnt show null values
+# Version 1.0
+
+use strict;
+use warnings;
+use IO::Socket;
+
+# Default configurations
+my $hostmcache = "centos_memcache";
+my $portmcache = "11211";
+my $expire = 600; # per second
+
+my %cmd;
+my $option;
+
+
+foreach my $line (@ARGV) {
+  if ($line =~ /^-/) { $option = $line; }
+  if ($line =~ /^-v/) { $cmd{'-v'} = "verbose"; }
+  else { $cmd{$option} = $line; }
+}
+
+
+if ($cmd{'-h'}) { $hostmcache = $cmd{'-h'}; }
+if ($cmd{'-p'}) { $portmcache = $cmd{'-p'}; }
+if ($cmd{'-e'}) { $expire = $cmd{'-e'}; }
+
+my $remote = IO::Socket::INET->new( Proto => "tcp",
+   PeerAddr  => $hostmcache,
+   PeerPort  => $portmcache,
+   Timeout  => '3',
+
+   );
+   unless ($remote) { die "Cannot connect to memcached on $hostmcache" }
+$remote->autoflush(1);
+
+sub usage {
+  print "Usage: mcacheconnect -h <mcachehost> -p <mcacheport> -c [set|get|dump|stats] -s <server> -k <key> -n <value>\n
+
+
+
+       mcacheconnect -c set -s sal -k Apache_Requests -n 230	# sets a value
+       mcacheconnect -c get -s sal -k Apache_Requests 		# gets a value
+       mcacheconnect -c dump 		 				# dump all values
+       mcacheconnect -c stats 		 				# memcache statistics
+
+
+       mcacheconnect -c dump -v		 				# dump all values on verbose mode
+
+       mcacheconnect 			 		 		# prints this help
+
+  Note: The options -h and -p are optional. The default values are \"localhost\" and \"11211\" respectively.
+";
+}
+
+if ($cmd{'-c'}) {
+
+  if ($cmd{'-c'} eq "set" && $cmd{'-k'} && $cmd{'-s'} && $cmd{'-n'} ne "") {
+    my @counter = split("", $cmd{'-n'});
+    my $bytes = ++$#counter;
+
+    print $remote "set $cmd{'-s'}\@$cmd{'-k'} 0 $expire $bytes\r\n";
+    print $remote "$cmd{'-n'}\r\n";
+    print $remote "quit\r\n";
+
+    while ( <$remote> ) { if (/STORED/) { print "key \"$cmd{'-k'}\" successfully stored to server \"$cmd{'-s'}\".\n"; } }
+
+
+
+    close $remote;
+  }
+  elsif ($cmd{'-c'} eq "get" && $cmd{'-k'} && $cmd{'-s'}) {
+    print $remote "get $cmd{'-s'}\@$cmd{'-k'}\r\n";
+
+
+
+    print $remote "quit\r\n";
+
+    while ( <$remote> ) { unless (/VALUE|END/) { print } }
+    close $remote;
+  }
+  elsif ($cmd{'-c'} eq "stats") {
+    print $remote "stats\r\n";
+    print $remote "quit\r\n";
+
+    while ( <$remote> ) { unless (/VALUE|END/) { print } }
+    close $remote;
+  }
+  elsif ($cmd{'-c'} eq "dump") {
+    my %items;
+    my $totalitems = 0;
+
+
+
+
+    print $remote "stats items\r\n";
+
+    while (<$remote>) {
+        last if /^END/;
+        if (/^STAT items:(\d*):number (\d*)/) {
+            $items{$1} = $2;
+            $totalitems += $2;
+
+
+
+        }
+    }
+    print "dumping memcache contents\n";
+    print "  number of buckets: " . scalar(keys(%items)) . "\n";
+    print "  number of items  : $totalitems\n\n";
+
+
+
+
+    foreach my $bucket (sort(keys(%items))) {
+      print $remote "stats cachedump $bucket $items{$bucket} 1\r\n";
+      my %keyexp;
+      while (<$remote>) {
+        last if /^END/;
+          # return format looks like this
+
+          # ITEM foo [6 b; 1176415152 s]
+          if (/^ITEM (\S+) \[.* (\d+) s\]/) {
+            $keyexp{$1} = $2;
+          }
+        }
+        foreach my $k (keys(%keyexp)) {
+          my $val = "";
+          my ($len,$flags);
+
+          print $remote "get $k\r\n";
+          my $response = <$remote>;
+          if ($response =~ /VALUE (\S+) (\d+) (\d+)/) {
+            $flags = $2;
+            $len = $3;
+            read $remote, $val, $len;
+            $_ = <$remote>;
+            $_ = <$remote>;
+            # get the END
+          }
+
+          if ($cmd{-v}) {
+            print "set $k $flags $keyexp{$k} $len\r\n$val\r\n";
+          }
+          else {
+            print "  $k: $val\r\n";
+          }
+        }
+    }
+  }
+  else {
+    &usage;
+  }
+} 
+else {
+  &usage;
+}
+
