@@ -12,9 +12,10 @@ RUN	yum -y update &&\
 	easy_install supervisor &&\
 	yum clean all &&\
 	mkdir -p /var/log/supervisor
+COPY phpMemcachedAdmin /var/www/html
 ADD supervisord.conf /etc/supervisord.conf
 ADD httpd.conf /etc/httpd/conf/httpd.conf
-ADD index.php /var/www/html/index.php
+
 
 EXPOSE 80 
 CMD ["/usr/bin/supervisord"]

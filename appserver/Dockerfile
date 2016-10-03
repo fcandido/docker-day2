@@ -13,15 +13,16 @@ RUN 	yum -y update &&\
 			git &&\
 	easy_install supervisor &&\
 	yum clean all &&\
-	 useradd -g wheel monitor &&\
+	useradd -g wheel monitor &&\
 	echo monitor | passwd --stdin monitor  &&\
-	mkdir -p /var/log/supervisor /opt/scritps/monitor &&\
+	mkdir -p /var/log/supervisor /opt/scripts/monitoring /tmp/applogs &&\
         touch /var/log/cron &&\
-        chown monitor:wheel /opt/scritps/monitor &&\
+        chown monitor:wheel /opt/scripts/monitoring /tmp/applogs &&\
 	echo "monitor   ALL=(ALL)       ALL" >> /etc/sudoers
 ADD monitor /var/spool/cron/monitor
 ADD mcacheconnect /usr/bin/mcacheconnect
 ADD supervisord.conf /etc/supervisord.conf
+COPY monitoring /opt/scripts/monitoring
 
 EXPOSE 22
 CMD ["/usr/bin/supervisord"]
