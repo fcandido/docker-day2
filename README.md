@@ -17,6 +17,7 @@ servidor com app que coleta seus dados e envia para a memcached
 cd appserver
 docker build -t centos6_appserver:1.7 .
 
+
 Para criar os containers executar os comandos abaixo apos a 
 criacao das imagens
 
