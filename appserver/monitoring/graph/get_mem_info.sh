@@ -3,10 +3,10 @@
 # get_mem_info    This shell script gets memory information from a linux server
 #                 using free.
 #
-# Created by Wilton (wilton.p.silva@vivo.com.br)
+# Created by Wilton (wilton.p.silva@gmail.com)
 #
 # Version 0.2 - Fri Aug 25 11:28:28 BRT 2011
-# Control by lockfile created by Wilton Paulo (wilton.p.silva@vivo.com.br)
+# Control by lockfile created by Wilton Paulo (wilton.p.silva@gmail.com)
 # Version 0.1 - Fri Aug 19 15:45:28 BRT 2011
 # First release.
 #
