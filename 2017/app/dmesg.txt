@@ -1,0 +1,1764 @@
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 4.4.0-64-generic (buildd@lgw01-56) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) ) #85-Ubuntu SMP Mon Feb 20 11:50:30 UTC 2017 (Ubuntu 4.4.0-64.85-generic 4.4.44)
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-4.4.0-64-generic root=UUID=8d1ad73a-9d6c-4ad1-a07c-a4e3d31fbef3 ro console=tty1 console=ttyS0
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Centaur CentaurHauls
+[    0.000000] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x01: 'x87 floating point registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x02: 'SSE registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x04: 'AVX registers'
+[    0.000000] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+[    0.000000] x86/fpu: Using 'eager' FPU context switches.
+[    0.000000] e820: BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009dfff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009e000-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000e0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000003fffffff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000fc000000-0x00000000ffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] SMBIOS 2.4 present.
+[    0.000000] DMI: Xen HVM domU, BIOS 4.2.amazon 02/16/2017
+[    0.000000] Hypervisor detected: Xen
+[    0.000000] Xen version 4.2.
+[    0.000000] Xen Platform PCI: I/O protocol version 1
+[    0.000000] Netfront and the Xen platform PCI driver have been compiled for this kernel: unplug emulated NICs.
+[    0.000000] Blkfront and the Xen platform PCI driver have been compiled for this kernel: unplug emulated disks.
+               You might have to change the root device
+               from /dev/hd[a-d] to /dev/xvd[a-d]
+               in your root= kernel command line option
+[    0.000000] HVMOP_pagetable_dying not supported
+[    0.000000] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000000] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000000] e820: last_pfn = 0x40000 max_arch_pfn = 0x400000000
+[    0.000000] MTRR default type: write-back
+[    0.000000] MTRR fixed ranges enabled:
+[    0.000000]   00000-9FFFF write-back
+[    0.000000]   A0000-BFFFF write-combining
+[    0.000000]   C0000-FFFFF write-back
+[    0.000000] MTRR variable ranges enabled:
+[    0.000000]   0 base 0000F0000000 mask 3FFFF8000000 uncachable
+[    0.000000]   1 base 0000F8000000 mask 3FFFFC000000 uncachable
+[    0.000000]   2 disabled
+[    0.000000]   3 disabled
+[    0.000000]   4 disabled
+[    0.000000]   5 disabled
+[    0.000000]   6 disabled
+[    0.000000]   7 disabled
+[    0.000000] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WC  UC- WT  
+[    0.000000] found SMP MP-table at [mem 0x000fbc20-0x000fbc2f] mapped at [ffff8800000fbc20]
+[    0.000000] Scanning 1 areas for low memory corruption
+[    0.000000] Base memory trampoline at [ffff880000098000] 98000 size 24576
+[    0.000000] BRK [0x0220d000, 0x0220dfff] PGTABLE
+[    0.000000] BRK [0x0220e000, 0x0220efff] PGTABLE
+[    0.000000] BRK [0x0220f000, 0x0220ffff] PGTABLE
+[    0.000000] RAMDISK: [mem 0x36ac4000-0x37559fff]
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] ACPI: RSDP 0x00000000000EA020 000024 (v02 Xen   )
+[    0.000000] ACPI: XSDT 0x00000000FC00DDC0 000054 (v01 Xen    HVM      00000000 HVML 00000000)
+[    0.000000] ACPI: FACP 0x00000000FC00DA80 0000F4 (v04 Xen    HVM      00000000 HVML 00000000)
+[    0.000000] ACPI: DSDT 0x00000000FC001CE0 00BD19 (v02 Xen    HVM      00000000 INTL 20090123)
+[    0.000000] ACPI: FACS 0x00000000FC001CA0 000040
+[    0.000000] ACPI: FACS 0x00000000FC001CA0 000040
+[    0.000000] ACPI: APIC 0x00000000FC00DB80 0000D8 (v02 Xen    HVM      00000000 HVML 00000000)
+[    0.000000] ACPI: HPET 0x00000000FC00DCD0 000038 (v01 Xen    HVM      00000000 HVML 00000000)
+[    0.000000] ACPI: WAET 0x00000000FC00DD10 000028 (v01 Xen    HVM      00000000 HVML 00000000)
+[    0.000000] ACPI: SSDT 0x00000000FC00DD40 000031 (v02 Xen    HVM      00000000 INTL 20090123)
+[    0.000000] ACPI: SSDT 0x00000000FC00DD80 000031 (v02 Xen    HVM      00000000 INTL 20090123)
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] No NUMA configuration found
+[    0.000000] Faking a node at [mem 0x0000000000000000-0x000000003fffffff]
+[    0.000000] NODE_DATA(0) allocated [mem 0x3fffb000-0x3fffffff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.000000]   DMA32    [mem 0x0000000001000000-0x000000003fffffff]
+[    0.000000]   Normal   empty
+[    0.000000]   Device   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009dfff]
+[    0.000000]   node   0: [mem 0x0000000000100000-0x000000003fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000003fffffff]
+[    0.000000] On node 0 totalpages: 262045
+[    0.000000]   DMA zone: 64 pages used for memmap
+[    0.000000]   DMA zone: 21 pages reserved
+[    0.000000]   DMA zone: 3997 pages, LIFO batch:0
+[    0.000000]   DMA32 zone: 4032 pages used for memmap
+[    0.000000]   DMA32 zone: 258048 pages, LIFO batch:31
+[    0.000000] ACPI: PM-Timer IO Port: 0xb008
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] IOAPIC[0]: apic_id 1, version 17, address 0xfec00000, GSI 0-47
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 low level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 low level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 low level)
+[    0.000000] ACPI: IRQ0 used by override.
+[    0.000000] ACPI: IRQ5 used by override.
+[    0.000000] ACPI: IRQ9 used by override.
+[    0.000000] ACPI: IRQ10 used by override.
+[    0.000000] ACPI: IRQ11 used by override.
+[    0.000000] Using ACPI (MADT) for SMP configuration information
+[    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.000000] smpboot: Allowing 15 CPUs, 14 hotplug CPUs
+[    0.000000] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.000000] PM: Registered nosave memory: [mem 0x0009e000-0x0009ffff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000a0000-0x000dffff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000e0000-0x000fffff]
+[    0.000000] e820: [mem 0x40000000-0xfbffffff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on Xen HVM
+[    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+[    0.000000] setup_percpu: NR_CPUS:512 nr_cpumask_bits:512 nr_cpu_ids:15 nr_node_ids:1
+[    0.000000] PERCPU: Embedded 33 pages/cpu @ffff88003e200000 s98264 r8192 d28712 u262144
+[    0.000000] pcpu-alloc: s98264 r8192 d28712 u262144 alloc=1*2097152
+[    0.000000] pcpu-alloc: [0] 00 01 02 03 04 05 06 07 [0] 08 09 10 11 12 13 14 -- 
+[    0.000000] xen: PV spinlocks enabled
+[    0.000000] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes)
+[    0.000000] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 257928
+[    0.000000] Policy zone: DMA32
+[    0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-4.4.0-64-generic root=UUID=8d1ad73a-9d6c-4ad1-a07c-a4e3d31fbef3 ro console=tty1 console=ttyS0
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] Calgary: detecting Calgary via BIOS EBDA area
+[    0.000000] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+[    0.000000] Memory: 1000108K/1048180K available (8452K kernel code, 1293K rwdata, 3980K rodata, 1488K init, 1316K bss, 48072K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=15, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	Build-time adjustment of leaf fanout to 64.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=512 to nr_cpu_ids=15.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64, nr_cpu_ids=15
+[    0.000000] NR_IRQS:33024 nr_irqs:952 16
+[    0.000000] xen:events: Using 2-level ABI
+[    0.000000] xen:events: Xen HVM callback vector for event delivery is enabled
+[    0.000000] Console: colour VGA+ 80x25
+[    0.000000] console [tty1] enabled
+[    0.000000] Cannot get hvm parameter CONSOLE_EVTCHN (18): -22!
+[    0.000000] console [ttyS0] enabled
+[    0.000000] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 30580167144 ns
+[    0.000000] hpet clockevent registered
+[    0.000000] tsc: Detected 2394.508 MHz processor
+[    0.012000] Calibrating delay loop (skipped), value calculated using timer frequency.. 4789.01 BogoMIPS (lpj=9578032)
+[    0.016003] pid_max: default: 32768 minimum: 301
+[    0.020013] ACPI: Core revision 20150930
+[    0.029464] ACPI: 3 ACPI AML tables successfully acquired and loaded
+[    0.033014] Security Framework initialized
+[    0.036003] Yama: becoming mindful.
+[    0.040028] AppArmor: AppArmor initialized
+[    0.044095] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+[    0.048178] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.052086] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.056005] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.060184] Initializing cgroup subsys io
+[    0.064006] Initializing cgroup subsys memory
+[    0.068010] Initializing cgroup subsys devices
+[    0.071123] Initializing cgroup subsys freezer
+[    0.072006] Initializing cgroup subsys net_cls
+[    0.076004] Initializing cgroup subsys perf_event
+[    0.080007] Initializing cgroup subsys net_prio
+[    0.084009] Initializing cgroup subsys hugetlb
+[    0.088008] Initializing cgroup subsys pids
+[    0.092064] CPU: Physical Processor ID: 0
+[    0.096756] mce: CPU supports 2 MCE banks
+[    0.100025] Last level iTLB entries: 4KB 1024, 2MB 1024, 4MB 1024
+[    0.104002] Last level dTLB entries: 4KB 1024, 2MB 1024, 4MB 1024, 1GB 4
+[    0.124839] ftrace: allocating 32123 entries in 126 pages
+[    0.156092] smpboot: APIC(0) Converting physical 0 to logical package 0
+[    0.160004] smpboot: Max logical packages: 15
+[    0.164077] x2apic: IRQ remapping doesn't support X2APIC mode
+[    0.168003] Switched APIC routing to physical flat.
+[    0.172000] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=0 pin2=0
+[    0.217262] clocksource: xen: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.224007] Xen: using vcpuop timer interface
+[    0.224014] installing Xen timer for CPU 0
+[    0.227318] smpboot: CPU0: Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz (family: 0x6, model: 0x3f, stepping: 0x2)
+[    0.231827] cpu 0 spinlock event irq 53
+[    0.232015] Performance Events: unsupported p6 CPU model 63 no PMU driver, software events only.
+[    0.240000] x86: Booted up 1 node, 1 CPUs
+[    0.240006] smpboot: Total of 1 processors activated (4789.01 BogoMIPS)
+[    0.244008] NMI watchdog: disabled (cpu0): hardware events not enabled
+[    0.248003] NMI watchdog: Shutting down hard lockup detector on all cpus
+[    0.252362] devtmpfs: initialized
+[    0.257362] evm: security.selinux
+[    0.260000] evm: security.SMACK64
+[    0.260007] evm: security.SMACK64EXEC
+[    0.262641] evm: security.SMACK64TRANSMUTE
+[    0.264004] evm: security.SMACK64MMAP
+[    0.266738] evm: security.ima
+[    0.268004] evm: security.capability
+[    0.270938] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.272116] pinctrl core: initialized pinctrl subsystem
+[    0.275795] RTC time: 10:47:23, date: 04/01/17
+[    0.276137] NET: Registered protocol family 16
+[    0.279326] cpuidle: using governor ladder
+[    0.280009] cpuidle: using governor menu
+[    0.283061] PCCT header not found.
+[    0.284077] ACPI: bus type PCI registered
+[    0.287060] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.288366] PCI: Using configuration type 1 for base access
+[    0.293101] ACPI: Added _OSI(Module Device)
+[    0.296011] ACPI: Added _OSI(Processor Device)
+[    0.299524] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.300004] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.305008] xen: --> pirq=16 -> irq=9 (gsi=9)
+[    0.307442] ACPI: Interpreter enabled
+[    0.308017] ACPI: (supports S0 S3 S4 S5)
+[    0.311116] ACPI: Using IOAPIC for interrupt routing
+[    0.312027] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.366261] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.368014] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+[    0.372015] acpi PNP0A03:00: _OSC failed (AE_NOT_FOUND); disabling ASPM
+[    0.376019] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[    0.380925] acpiphp: Slot [0] registered
+[    0.384998] acpiphp: Slot [3] registered
+[    0.388340] acpiphp: Slot [4] registered
+[    0.391937] acpiphp: Slot [5] registered
+[    0.392358] acpiphp: Slot [6] registered
+[    0.395869] acpiphp: Slot [7] registered
+[    0.396370] acpiphp: Slot [8] registered
+[    0.399938] acpiphp: Slot [9] registered
+[    0.400357] acpiphp: Slot [10] registered
+[    0.404101] acpiphp: Slot [11] registered
+[    0.407792] acpiphp: Slot [12] registered
+[    0.408340] acpiphp: Slot [13] registered
+[    0.412000] acpiphp: Slot [14] registered
+[    0.412325] acpiphp: Slot [15] registered
+[    0.416000] acpiphp: Slot [16] registered
+[    0.416355] acpiphp: Slot [17] registered
+[    0.420015] acpiphp: Slot [18] registered
+[    0.423671] acpiphp: Slot [19] registered
+[    0.424364] acpiphp: Slot [20] registered
+[    0.428052] acpiphp: Slot [21] registered
+[    0.432053] acpiphp: Slot [22] registered
+[    0.435547] acpiphp: Slot [23] registered
+[    0.436349] acpiphp: Slot [24] registered
+[    0.440151] acpiphp: Slot [25] registered
+[    0.443771] acpiphp: Slot [26] registered
+[    0.444360] acpiphp: Slot [27] registered
+[    0.448009] acpiphp: Slot [28] registered
+[    0.451958] acpiphp: Slot [29] registered
+[    0.452383] acpiphp: Slot [30] registered
+[    0.456233] acpiphp: Slot [31] registered
+[    0.460367] PCI host bridge to bus 0000:00
+[    0.463814] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.464006] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.468008] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.472006] pci_bus 0000:00: root bus resource [mem 0xf0000000-0xfbffffff window]
+[    0.476008] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.480187] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+[    0.482359] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+[    0.485742] pci 0000:00:01.1: [8086:7010] type 00 class 0x010180
+[    0.487369] pci 0000:00:01.1: reg 0x20: [io  0xc100-0xc10f]
+[    0.488000] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+[    0.488006] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+[    0.492009] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+[    0.496009] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+[    0.500678] pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+[    0.500785] * Found PM-Timer Bug on the chipset. Due to workarounds for a bug,
+               * this clock source is slow. Consider trying other clock sources
+[    0.505574] pci 0000:00:01.3: quirk: [io  0xb000-0xb03f] claimed by PIIX4 ACPI
+[    0.509820] pci 0000:00:02.0: [1013:00b8] type 00 class 0x030000
+[    0.510328] pci 0000:00:02.0: reg 0x10: [mem 0xf0000000-0xf1ffffff pref]
+[    0.510590] pci 0000:00:02.0: reg 0x14: [mem 0xf3000000-0xf3000fff]
+[    0.512600] pci 0000:00:03.0: [5853:0001] type 00 class 0xff8000
+[    0.513031] pci 0000:00:03.0: reg 0x10: [io  0xc000-0xc0ff]
+[    0.513291] pci 0000:00:03.0: reg 0x14: [mem 0xf2000000-0xf2ffffff pref]
+[    0.516271] ACPI: PCI Interrupt Link [LNKA] (IRQs *5 10 11)
+[    0.522180] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+[    0.526483] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+[    0.531033] ACPI: PCI Interrupt Link [LNKD] (IRQs *5 10 11)
+[    0.549776] ACPI: Enabled 2 GPEs in block 00 to 0F
+[    0.552072] xen:balloon: Initialising balloon driver
+[    0.560028] xen_balloon: Initialising balloon driver
+[    0.564139] vgaarb: setting as boot device: PCI:0000:00:02.0
+[    0.567154] vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+[    0.568008] vgaarb: loaded
+[    0.569749] vgaarb: bridge control possible 0000:00:02.0
+[    0.573038] SCSI subsystem initialized
+[    0.575253] libata version 3.00 loaded.
+[    0.575275] ACPI: bus type USB registered
+[    0.576021] usbcore: registered new interface driver usbfs
+[    0.578800] usbcore: registered new interface driver hub
+[    0.580017] usbcore: registered new device driver usb
+[    0.582895] PCI: Using ACPI for IRQ routing
+[    0.584006] PCI: pci_cache_line_size set to 64 bytes
+[    0.584353] e820: reserve RAM buffer [mem 0x0009e000-0x0009ffff]
+[    0.584467] NetLabel: Initializing
+[    0.586433] NetLabel:  domain hash size = 128
+[    0.588005] NetLabel:  protocols = UNLABELED CIPSOv4
+[    0.590725] NetLabel:  unlabeled traffic allowed by default
+[    0.592090] HPET: 3 timers in total, 0 timers will be used for per-cpu timer
+[    0.595714] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    0.598003] hpet0: 3 comparators, 64-bit 62.500000 MHz counter
+[    0.602055] amd_nb: Cannot enumerate AMD northbridges
+[    0.604021] clocksource: Switched to clocksource xen
+[    0.611530] AppArmor: AppArmor Filesystem Enabled
+[    0.614175] pnp: PnP ACPI init
+[    0.616381] system 00:00: [mem 0x00000000-0x0009ffff] could not be reserved
+[    0.619956] system 00:00: Plug and Play ACPI device, IDs PNP0c02 (active)
+[    0.620034] system 00:01: [io  0x08a0-0x08a3] has been reserved
+[    0.622997] system 00:01: [io  0x0cc0-0x0ccf] has been reserved
+[    0.626139] system 00:01: [io  0x04d0-0x04d1] has been reserved
+[    0.629173] system 00:01: Plug and Play ACPI device, IDs PNP0c02 (active)
+[    0.629201] xen: --> pirq=17 -> irq=8 (gsi=8)
+[    0.629221] pnp 00:02: Plug and Play ACPI device, IDs PNP0b00 (active)
+[    0.629244] xen: --> pirq=18 -> irq=12 (gsi=12)
+[    0.629258] pnp 00:03: Plug and Play ACPI device, IDs PNP0f13 (active)
+[    0.629274] xen: --> pirq=19 -> irq=1 (gsi=1)
+[    0.629286] pnp 00:04: Plug and Play ACPI device, IDs PNP0303 PNP030b (active)
+[    0.629301] xen: --> pirq=20 -> irq=6 (gsi=6)
+[    0.629302] pnp 00:05: [dma 2]
+[    0.629314] pnp 00:05: Plug and Play ACPI device, IDs PNP0700 (active)
+[    0.629336] xen: --> pirq=21 -> irq=4 (gsi=4)
+[    0.629349] pnp 00:06: Plug and Play ACPI device, IDs PNP0501 (active)
+[    0.629385] system 00:07: [io  0x10c0-0x1141] has been reserved
+[    0.632531] system 00:07: [io  0xb044-0xb047] has been reserved
+[    0.635856] system 00:07: Plug and Play ACPI device, IDs PNP0c02 (active)
+[    0.649584] pnp: PnP ACPI: found 8 devices
+[    0.657274] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.662445] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.662447] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.662449] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.662450] pci_bus 0000:00: resource 7 [mem 0xf0000000-0xfbffffff window]
+[    0.662490] NET: Registered protocol family 2
+[    0.665333] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.668746] TCP bind hash table entries: 8192 (order: 5, 131072 bytes)
+[    0.671940] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.675312] UDP hash table entries: 512 (order: 2, 16384 bytes)
+[    0.678412] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+[    0.682001] NET: Registered protocol family 1
+[    0.684364] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.687486] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+[    0.690791] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[    0.694110] pci 0000:00:02.0: Video device with shadowed ROM
+[    0.694163] PCI: CLS 0 bytes, default 64
+[    0.694216] Trying to unpack rootfs image as initramfs...
+[    2.443667] Freeing initrd memory: 10840K (ffff880036ac4000 - ffff88003755a000)
+[    2.450729] RAPL PMU detected, API unit is 2^-32 Joules, 3 fixed counters 655360 ms ovfl timer
+[    2.457591] hw unit of domain pp0-core 2^-14 Joules
+[    2.461752] hw unit of domain package 2^-14 Joules
+[    2.466148] hw unit of domain dram 2^-16 Joules
+[    2.470287] Scanning for low memory corruption every 60 seconds
+[    2.478644] futex hash table entries: 4096 (order: 6, 262144 bytes)
+[    2.485282] audit: initializing netlink subsys (disabled)
+[    2.493210] audit: type=2000 audit(1491043646.151:1): initialized
+[    2.499708] Initialise system trusted keyring
+[    2.504819] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[    2.512348] zbud: loaded
+[    2.515801] VFS: Disk quotas dquot_6.6.0
+[    2.520133] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    2.526717] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    2.532859] fuse init (API version 7.23)
+[    2.537173] Key type big_key registered
+[    2.541861] Allocating IMA MOK and blacklist keyrings.
+[    2.547208] Key type asymmetric registered
+[    2.551369] Asymmetric key parser 'x509' registered
+[    2.555395] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 249)
+[    2.561397] io scheduler noop registered
+[    2.565241] io scheduler deadline registered (default)
+[    2.569317] io scheduler cfq registered
+[    2.572763] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    2.577735] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+[    2.582698] intel_idle: does not run on family 6 model 63
+[    2.582786] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    2.590193] ACPI: Power Button [PWRF]
+[    2.594888] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[    2.603032] ACPI: Sleep Button [SLPF]
+[    2.607077] GHES: HEST is not enabled!
+[    2.611496] xen: --> pirq=22 -> irq=28 (gsi=28)
+[    2.611614] xen:grant_table: Grant tables using version 1 layout
+[    2.616566] Grant table initialized
+[    2.623305] Cannot get hvm parameter CONSOLE_EVTCHN (18): -22!
+[    2.629398] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    2.662878] 00:06: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    2.668886] Linux agpgart interface v0.103
+[    2.673493] brd: module loaded
+[    2.677235] loop: module loaded
+[    2.680929] ata_piix 0000:00:01.1: version 2.13
+[    2.687908] scsi host0: ata_piix
+[    2.690776] scsi host1: ata_piix
+[    2.693840] ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc100 irq 14
+[    2.702548] ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc108 irq 15
+[    2.710565] libphy: Fixed MDIO Bus: probed
+[    2.714413] tun: Universal TUN/TAP device driver, 1.6
+[    2.718084] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    2.722171] PPP generic driver version 2.4.2
+[    2.725530] xen_netfront: Initialising Xen virtual ethernet driver
+[    2.746791] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    2.752847] ehci-pci: EHCI PCI platform driver
+[    2.757643] ehci-platform: EHCI generic platform driver
+[    2.761259] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    2.765887] ohci-pci: OHCI PCI platform driver
+[    2.770664] ohci-platform: OHCI generic platform driver
+[    2.775435] uhci_hcd: USB Universal Host Controller Interface driver
+[    2.785388] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f13:PS2M] at 0x60,0x64 irq 1,12
+[    2.799645] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    2.803912] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    2.808978] mousedev: PS/2 mouse device common for all mice
+[    2.818360] rtc_cmos 00:02: rtc core: registered rtc_cmos as rtc0
+[    2.826757] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+[    2.835233] rtc_cmos 00:02: alarms up to one day, 114 bytes nvram, hpet irqs
+[    2.842534] i2c /dev entries driver
+[    2.867199] device-mapper: uevent: version 1.0.3
+[    2.871677] device-mapper: ioctl: 4.34.0-ioctl (2015-10-28) initialised: dm-devel@redhat.com
+[    2.879318] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.892721] NET: Registered protocol family 10
+[    2.895794] NET: Registered protocol family 17
+[    2.898428] Key type dns_resolver registered
+[    2.901229] microcode: CPU0 sig=0x306f2, pf=0x1, revision=0x25
+[    2.905171] microcode: Microcode Update Driver: v2.01 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+[    2.910775] registered taskstats version 1
+[    2.913292] blkfront: xvda: barrier or flush: disabled; persistent grants: disabled; indirect descriptors: enabled;
+[    2.918476] Loading compiled-in X.509 certificates
+[    2.921618] Loaded X.509 cert 'Build time autogenerated kernel key: 11f495fa9f4186f263f5fd144a167c99990e2f12'
+[    2.927458] zswap: loaded using pool lzo/zbud
+[    2.932578] Key type trusted registered
+[    2.936419]  xvda: xvda1
+[    2.940379] Key type encrypted registered
+[    2.942807] AppArmor: AppArmor sha1 policy hashing enabled
+[    2.945993] ima: No TPM chip found, activating TPM-bypass!
+[    2.948838] evm: HMAC attrs: 0x1
+[    2.950994]   Magic number: 13:356:779
+[    2.953265] rtc_cmos 00:02: setting system clock to 2017-04-01 10:47:26 UTC (1491043646)
+[    2.957576] BIOS EDD facility v0.16 2004-Jun-25, 0 devices found
+[    2.960841] EDD information not available.
+[    2.963328] PM: Hibernation image not present or could not be loaded.
+[    2.964919] Freeing unused kernel memory: 1488K (ffffffff81f45000 - ffffffff820b9000)
+[    2.969898] Write protecting the kernel read-only data: 14336k
+[    2.973293] Freeing unused kernel memory: 1776K (ffff880001844000 - ffff880001a00000)
+[    2.977937] Freeing unused kernel memory: 116K (ffff880001de3000 - ffff880001e00000)
+[    2.995294] random: udevadm: uninitialized urandom read (16 bytes read, 15 bits of entropy available)
+[    3.000801] random: systemd-udevd: uninitialized urandom read (16 bytes read, 15 bits of entropy available)
+[    3.006956] random: systemd-udevd: uninitialized urandom read (16 bytes read, 15 bits of entropy available)
+[    3.013226] random: udevadm: uninitialized urandom read (16 bytes read, 15 bits of entropy available)
+[    3.018538] random: systemd-udevd: uninitialized urandom read (16 bytes read, 15 bits of entropy available)
+[    3.024185] random: udevadm: uninitialized urandom read (16 bytes read, 15 bits of entropy available)
+[    3.030664] random: systemd-udevd: uninitialized urandom read (16 bytes read, 15 bits of entropy available)
+[    3.036802] random: udevadm: uninitialized urandom read (16 bytes read, 15 bits of entropy available)
+[    3.043202] random: udevadm: uninitialized urandom read (16 bytes read, 15 bits of entropy available)
+[    3.049307] random: udevadm: uninitialized urandom read (16 bytes read, 15 bits of entropy available)
+[    3.142264] FDC 0 is a S82078B
+[    3.183901] AVX2 version of gcm_enc/dec engaged.
+[    3.190413] AES CTR mode by8 optimization enabled
+[    3.468118] tsc: Refined TSC clocksource calibration: 2394.456 MHz
+[    3.472068] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x2283c236f90, max_idle_ns: 440795217409 ns
+[    4.193176] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+[    4.662970] md: linear personality registered for level -1
+[    4.669146] md: multipath personality registered for level -4
+[    4.675585] md: raid0 personality registered for level 0
+[    4.682317] md: raid1 personality registered for level 1
+[    4.756067] raid6: sse2x1   gen()  8573 MB/s
+[    4.824060] raid6: sse2x1   xor()  6682 MB/s
+[    4.892059] raid6: sse2x2   gen() 11020 MB/s
+[    4.960068] raid6: sse2x2   xor()  7344 MB/s
+[    5.028065] raid6: sse2x4   gen() 12611 MB/s
+[    5.096061] raid6: sse2x4   xor()  8813 MB/s
+[    5.168058] raid6: avx2x1   gen() 16720 MB/s
+[    5.236060] raid6: avx2x2   gen() 19815 MB/s
+[    5.304060] raid6: avx2x4   gen() 22435 MB/s
+[    5.307008] raid6: using algorithm avx2x4 gen() 22435 MB/s
+[    5.310327] raid6: using avx2x2 recovery algorithm
+[    5.316217] xor: automatically using best checksumming function:
+[    5.356059]    avx       : 26549.000 MB/sec
+[    5.361280] async_tx: api initialized (async)
+[    5.376811] md: raid6 personality registered for level 6
+[    5.381720] md: raid5 personality registered for level 5
+[    5.385125] md: raid4 personality registered for level 4
+[    5.393411] md: raid10 personality registered for level 10
+[    5.435387] Btrfs loaded
+[    5.478831] EXT4-fs (xvda1): mounted filesystem with ordered data mode. Opts: (null)
+[    5.578120] systemd[1]: systemd 229 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ -LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN)
+[    5.587748] systemd[1]: Detected virtualization xen.
+[    5.590667] systemd[1]: Detected architecture x86-64.
+[    5.598166] systemd[1]: Set hostname to <ubuntu>.
+[    5.603048] systemd[1]: Initializing machine ID from random generator.
+[    5.606421] systemd[1]: Installed transient /etc/machine-id file.
+[    5.692975] systemd[1]: Listening on LVM2 metadata daemon socket.
+[    5.702540] systemd[1]: Reached target Swap.
+[    5.708096] systemd[1]: Listening on LVM2 poll daemon socket.
+[    5.715091] systemd[1]: Listening on udev Control Socket.
+[    5.721764] systemd[1]: Listening on Syslog Socket.
+[    5.728479] systemd[1]: Listening on Device-mapper event daemon FIFOs.
+[    5.736510] systemd[1]: Reached target User and Group Name Lookups.
+[    5.744607] systemd[1]: Created slice System Slice.
+[    5.751031] systemd[1]: Created slice system-serial\x2dgetty.slice.
+[    5.758301] systemd[1]: Listening on Journal Socket.
+[    5.765142] systemd[1]: Starting Set console keymap...
+[    5.773292] systemd[1]: Starting Uncomplicated firewall...
+[    5.789682] systemd[1]: Starting Create list of required static device nodes for the current kernel...
+[    5.808667] systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+[    5.825201] systemd[1]: Starting Remount Root and Kernel File Systems...
+[    5.834845] EXT4-fs (xvda1): re-mounted. Opts: discard
+[    5.840552] systemd[1]: Starting Nameserver information manager...
+[    5.849855] systemd[1]: Listening on udev Kernel Socket.
+[    5.855967] systemd[1]: Listening on Journal Audit Socket.
+[    5.862733] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+[    5.872918] systemd[1]: Mounting Huge Pages File System...
+[    5.881180] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[    5.890783] systemd[1]: Created slice User and Session Slice.
+[    5.896811] systemd[1]: Reached target Slices.
+[    5.902880] systemd[1]: Mounting POSIX Message Queue File System...
+[    5.912100] systemd[1]: Reached target Encrypted Volumes.
+[    5.920247] systemd[1]: Mounting Debug File System...
+[    5.926932] systemd[1]: Listening on /dev/initctl Compatibility Named Pipe.
+[    5.936888] systemd[1]: Starting Load Kernel Modules...
+[    5.944686] systemd[1]: Listening on Journal Socket (/dev/log).
+[    5.950264] Loading iSCSI transport class v2.0-870.
+[    5.960488] systemd[1]: Starting Journal Service...
+[    5.973805] iscsi: registered transport (tcp)
+[    5.985915] systemd[1]: Mounted POSIX Message Queue File System.
+[    6.004971] systemd[1]: Mounted Debug File System.
+[    6.018932] systemd[1]: Mounted Huge Pages File System.
+[    6.027780] systemd[1]: Started Journal Service.
+[    6.043522] iscsi: registered transport (iser)
+[    6.259775] systemd-journald[393]: Received request to flush runtime journal from PID 1
+[    6.754534] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 236688
+[    6.754537] Policy zone: DMA32
+[    6.797890] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 236688
+[    6.797891] Policy zone: Normal
+[    8.012800] ppdev: user-space parallel port driver
+[    8.023997] audit: type=1400 audit(1491043651.564:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lxc-container-default" pid=598 comm="apparmor_parser"
+[    8.024923] audit: type=1400 audit(1491043651.568:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lxc-container-default-cgns" pid=598 comm="apparmor_parser"
+[    8.025721] audit: type=1400 audit(1491043651.568:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lxc-container-default-with-mounting" pid=598 comm="apparmor_parser"
+[    8.026715] audit: type=1400 audit(1491043651.568:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lxc-container-default-with-nesting" pid=598 comm="apparmor_parser"
+[    8.425114] audit: type=1400 audit(1491043651.968:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/sbin/dhclient" pid=742 comm="apparmor_parser"
+[    8.425467] audit: type=1400 audit(1491043651.968:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-client.action" pid=742 comm="apparmor_parser"
+[    8.425745] audit: type=1400 audit(1491043651.968:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-helper" pid=742 comm="apparmor_parser"
+[    8.426007] audit: type=1400 audit(1491043651.968:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=742 comm="apparmor_parser"
+[    8.438340] audit: type=1400 audit(1491043651.980:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/bin/lxc-start" pid=786 comm="apparmor_parser"
+[    8.554494] audit: type=1400 audit(1491043652.096:11): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/lxd/lxd-bridge-proxy" pid=788 comm="apparmor_parser"
+[   10.238842] EXT4-fs (xvda1): resizing filesystem from 2094474 to 2095139 blocks
+[   10.239147] EXT4-fs (xvda1): resized filesystem to 2095139
+[   10.822976] random: nonblocking pool is initialized
+[   11.025327] cgroup: new mount options do not match the existing superblock, will be ignored
+[ 5779.218942] SGI XFS with ACLs, security attributes, realtime, no debug enabled
+[ 5789.626902] JFS: nTxBlock = 7924, nTxLock = 63398
+[ 5789.635406] ntfs: driver 2.1.32 [Flags: R/O MODULE].
+[ 5789.652920] QNX4 filesystem 0.2.3 registered.
+[ 5801.574065] aufs 4.x-rcN-20160111
+[ 5818.573426] audit_printk_skb: 9 callbacks suppressed
+[ 5818.573429] audit: type=1400 audit(1491049462.901:15): apparmor="STATUS" operation="profile_load" profile="unconfined" name="docker-default" pid=6331 comm="apparmor_parser"
+[ 5818.630747] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.
+[ 5818.632873] Bridge firewalling registered
+[ 5818.638452] nf_conntrack version 0.5.0 (7924 buckets, 31696 max)
+[ 5818.657458] ip_tables: (C) 2000-2006 Netfilter Core Team
+[ 5818.725620] Initializing XFRM netlink socket
+[ 5818.766979] IPv6: ADDRCONF(NETDEV_UP): docker0: link is not ready
+[ 5818.784166] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 7804.358542] conntrack: generic helper won't handle protocol 47. Please consider loading the specific helper module.
+[ 9360.975022] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9360.991159] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9361.001910] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9361.019879] device veth1df8dd5 entered promiscuous mode
+[ 9361.019926] IPv6: ADDRCONF(NETDEV_UP): veth1df8dd5: link is not ready
+[ 9361.182753] eth0: renamed from veth92d22dc
+[ 9361.182954] IPv6: ADDRCONF(NETDEV_CHANGE): veth1df8dd5: link becomes ready
+[ 9361.182969] docker0: port 1(veth1df8dd5) entered forwarding state
+[ 9361.182975] docker0: port 1(veth1df8dd5) entered forwarding state
+[ 9361.183003] IPv6: ADDRCONF(NETDEV_CHANGE): docker0: link becomes ready
+[ 9361.241600] docker0: port 1(veth1df8dd5) entered disabled state
+[ 9361.241640] veth92d22dc: renamed from eth0
+[ 9361.256255] docker0: port 1(veth1df8dd5) entered disabled state
+[ 9361.256511] device veth1df8dd5 left promiscuous mode
+[ 9361.256513] docker0: port 1(veth1df8dd5) entered disabled state
+[ 9469.568090] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9469.584344] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9469.597091] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9469.601778] device vethad7908b entered promiscuous mode
+[ 9469.601825] IPv6: ADDRCONF(NETDEV_UP): vethad7908b: link is not ready
+[ 9469.686812] eth0: renamed from veth93a1169
+[ 9469.687007] IPv6: ADDRCONF(NETDEV_CHANGE): vethad7908b: link becomes ready
+[ 9469.687022] docker0: port 1(vethad7908b) entered forwarding state
+[ 9469.687028] docker0: port 1(vethad7908b) entered forwarding state
+[ 9484.704083] docker0: port 1(vethad7908b) entered forwarding state
+[ 9501.221679] docker0: port 1(vethad7908b) entered disabled state
+[ 9501.221728] veth93a1169: renamed from eth0
+[ 9501.235799] docker0: port 1(vethad7908b) entered disabled state
+[ 9501.236191] device vethad7908b left promiscuous mode
+[ 9501.236193] docker0: port 1(vethad7908b) entered disabled state
+[ 9501.254302] auplink[7166]: segfault at 7ffd89d7f8b8 ip 00007f8dbdb759c9 sp 00007ffd89d7f8c0 error 6 in libc-2.23.so[7f8dbda7d000+1bf000]
+[ 9501.566373] aufs au_plink_put:450:dockerd[6316]: pseudo-link is not flushed
+[ 9501.579888] aufs au_opts_verify:1597:dockerd[6316]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9501.739387] auplink[7176]: segfault at 7ffd7dd42548 ip 00007f515102f9c9 sp 00007ffd7dd42550 error 6 in libc-2.23.so[7f5150f37000+1bf000]
+[ 9501.946319] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9501.971198] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9501.982735] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9502.030677] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9502.046794] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9502.058220] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9656.714193] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9656.730859] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9656.742464] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9814.647049] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9814.663164] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9814.675724] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[ 9814.679899] device veth7098017 entered promiscuous mode
+[ 9814.679947] IPv6: ADDRCONF(NETDEV_UP): veth7098017: link is not ready
+[ 9814.802674] eth0: renamed from veth41f10dd
+[ 9814.802860] IPv6: ADDRCONF(NETDEV_CHANGE): veth7098017: link becomes ready
+[ 9814.802876] docker0: port 1(veth7098017) entered forwarding state
+[ 9814.802881] docker0: port 1(veth7098017) entered forwarding state
+[ 9829.856092] docker0: port 1(veth7098017) entered forwarding state
+[11634.952276] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[11634.967623] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[11634.978126] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[11634.982199] device vethd36efc3 entered promiscuous mode
+[11634.982241] IPv6: ADDRCONF(NETDEV_UP): vethd36efc3: link is not ready
+[11635.062682] eth0: renamed from vethbf2dfb9
+[11635.062880] IPv6: ADDRCONF(NETDEV_CHANGE): vethd36efc3: link becomes ready
+[11635.062895] docker0: port 2(vethd36efc3) entered forwarding state
+[11635.062900] docker0: port 2(vethd36efc3) entered forwarding state
+[11635.115411] docker0: port 2(vethd36efc3) entered disabled state
+[11635.115452] vethbf2dfb9: renamed from eth0
+[11635.127987] docker0: port 2(vethd36efc3) entered disabled state
+[11635.128367] device vethd36efc3 left promiscuous mode
+[11635.128370] docker0: port 2(vethd36efc3) entered disabled state
+[11635.155137] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[11635.205174] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[11635.219918] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[11635.230432] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[11635.234265] device vethac4e851 entered promiscuous mode
+[11635.234308] IPv6: ADDRCONF(NETDEV_UP): vethac4e851: link is not ready
+[11635.234311] docker0: port 2(vethac4e851) entered forwarding state
+[11635.234315] docker0: port 2(vethac4e851) entered forwarding state
+[11635.318940] eth0: renamed from veth082595e
+[11635.319142] IPv6: ADDRCONF(NETDEV_CHANGE): vethac4e851: link becomes ready
+[11635.392267] docker0: port 2(vethac4e851) entered disabled state
+[11635.392311] veth082595e: renamed from eth0
+[11635.407443] docker0: port 2(vethac4e851) entered disabled state
+[11635.407747] device vethac4e851 left promiscuous mode
+[11635.407749] docker0: port 2(vethac4e851) entered disabled state
+[12251.631792] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12251.647032] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12251.658277] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12251.662454] device veth50cf50b entered promiscuous mode
+[12251.662501] IPv6: ADDRCONF(NETDEV_UP): veth50cf50b: link is not ready
+[12251.746707] eth0: renamed from vethae69564
+[12251.746922] IPv6: ADDRCONF(NETDEV_CHANGE): veth50cf50b: link becomes ready
+[12251.746937] docker0: port 2(veth50cf50b) entered forwarding state
+[12251.746942] docker0: port 2(veth50cf50b) entered forwarding state
+[12251.822800] docker0: port 2(veth50cf50b) entered disabled state
+[12251.822843] vethae69564: renamed from eth0
+[12251.835918] docker0: port 2(veth50cf50b) entered disabled state
+[12251.836372] device veth50cf50b left promiscuous mode
+[12251.836375] docker0: port 2(veth50cf50b) entered disabled state
+[12379.192910] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12379.207692] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12379.217989] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12379.222568] device veth085ccee entered promiscuous mode
+[12379.222609] IPv6: ADDRCONF(NETDEV_UP): veth085ccee: link is not ready
+[12379.302569] eth0: renamed from veth815e5ab
+[12379.302776] IPv6: ADDRCONF(NETDEV_CHANGE): veth085ccee: link becomes ready
+[12379.302789] docker0: port 2(veth085ccee) entered forwarding state
+[12379.302794] docker0: port 2(veth085ccee) entered forwarding state
+[12385.085962] docker0: port 2(veth085ccee) entered disabled state
+[12385.086004] veth815e5ab: renamed from eth0
+[12385.099514] docker0: port 2(veth085ccee) entered disabled state
+[12385.099751] device veth085ccee left promiscuous mode
+[12385.099753] docker0: port 2(veth085ccee) entered disabled state
+[12468.075672] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12468.091142] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12468.102471] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12468.106683] device veth9631999 entered promiscuous mode
+[12468.106726] IPv6: ADDRCONF(NETDEV_UP): veth9631999: link is not ready
+[12468.190772] eth0: renamed from vethc54812b
+[12468.190963] IPv6: ADDRCONF(NETDEV_CHANGE): veth9631999: link becomes ready
+[12468.190979] docker0: port 2(veth9631999) entered forwarding state
+[12468.190984] docker0: port 2(veth9631999) entered forwarding state
+[12483.232093] docker0: port 2(veth9631999) entered forwarding state
+[12504.032495] docker0: port 2(veth9631999) entered disabled state
+[12504.032548] vethc54812b: renamed from eth0
+[12504.044220] docker0: port 2(veth9631999) entered disabled state
+[12504.044644] device veth9631999 left promiscuous mode
+[12504.044647] docker0: port 2(veth9631999) entered disabled state
+[12504.063857] auplink[12631]: segfault at 7fff17130088 ip 00007f8bd43189c9 sp 00007fff17130090 error 6 in libc-2.23.so[7f8bd4220000+1bf000]
+[12504.372557] aufs au_plink_put:450:dockerd[7598]: pseudo-link is not flushed
+[12504.389742] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.410422] auplink[12657]: segfault at 7ffe566ef838 ip 00007f64e19339c9 sp 00007ffe566ef840 error 6 in libc-2.23.so[7f64e183b000+1bf000]
+[12506.619650] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.638499] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.648684] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.698619] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.712290] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.723682] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.767987] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.784974] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.795393] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.839474] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.853227] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.864456] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12506.868333] device veth8c1fe21 entered promiscuous mode
+[12506.868371] IPv6: ADDRCONF(NETDEV_UP): veth8c1fe21: link is not ready
+[12506.950963] eth0: renamed from veth05f2ace
+[12506.951175] IPv6: ADDRCONF(NETDEV_CHANGE): veth8c1fe21: link becomes ready
+[12506.951190] docker0: port 2(veth8c1fe21) entered forwarding state
+[12506.951195] docker0: port 2(veth8c1fe21) entered forwarding state
+[12519.385544] docker0: port 2(veth8c1fe21) entered disabled state
+[12519.385603] veth05f2ace: renamed from eth0
+[12519.400169] docker0: port 2(veth8c1fe21) entered disabled state
+[12519.400438] device veth8c1fe21 left promiscuous mode
+[12519.400440] docker0: port 2(veth8c1fe21) entered disabled state
+[12519.427589] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12519.519462] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12519.535153] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12519.547981] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12519.551893] device vethbdeb6c6 entered promiscuous mode
+[12519.551936] IPv6: ADDRCONF(NETDEV_UP): vethbdeb6c6: link is not ready
+[12519.551939] docker0: port 2(vethbdeb6c6) entered forwarding state
+[12519.551943] docker0: port 2(vethbdeb6c6) entered forwarding state
+[12519.642877] eth0: renamed from veth8a53185
+[12519.643157] IPv6: ADDRCONF(NETDEV_CHANGE): vethbdeb6c6: link becomes ready
+[12519.849760] docker0: port 2(vethbdeb6c6) entered disabled state
+[12519.849804] veth8a53185: renamed from eth0
+[12519.863288] docker0: port 2(vethbdeb6c6) entered disabled state
+[12519.863555] device vethbdeb6c6 left promiscuous mode
+[12519.863557] docker0: port 2(vethbdeb6c6) entered disabled state
+[12519.890254] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12519.936321] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12519.950710] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12519.961633] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12519.965553] device veth07de808 entered promiscuous mode
+[12519.965595] IPv6: ADDRCONF(NETDEV_UP): veth07de808: link is not ready
+[12519.965599] docker0: port 2(veth07de808) entered forwarding state
+[12519.965605] docker0: port 2(veth07de808) entered forwarding state
+[12520.051044] eth0: renamed from vethfc83a19
+[12520.051252] IPv6: ADDRCONF(NETDEV_CHANGE): veth07de808: link becomes ready
+[12521.108546] docker0: port 2(veth07de808) entered disabled state
+[12521.108601] vethfc83a19: renamed from eth0
+[12521.126008] docker0: port 2(veth07de808) entered disabled state
+[12521.126276] device veth07de808 left promiscuous mode
+[12521.126278] docker0: port 2(veth07de808) entered disabled state
+[12521.154039] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12521.213647] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12521.231455] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12521.242536] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12521.246530] device vethb929478 entered promiscuous mode
+[12521.246574] IPv6: ADDRCONF(NETDEV_UP): vethb929478: link is not ready
+[12521.246577] docker0: port 2(vethb929478) entered forwarding state
+[12521.246581] docker0: port 2(vethb929478) entered forwarding state
+[12521.330836] eth0: renamed from vethb5ac951
+[12521.331033] IPv6: ADDRCONF(NETDEV_CHANGE): vethb929478: link becomes ready
+[12521.508681] docker0: port 2(vethb929478) entered disabled state
+[12521.508722] vethb5ac951: renamed from eth0
+[12521.525057] docker0: port 2(vethb929478) entered disabled state
+[12521.525316] device vethb929478 left promiscuous mode
+[12521.525318] docker0: port 2(vethb929478) entered disabled state
+[12521.553620] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12521.611286] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12521.624880] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12521.635705] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[12521.639498] device vethefd1432 entered promiscuous mode
+[12521.639539] IPv6: ADDRCONF(NETDEV_UP): vethefd1432: link is not ready
+[12521.639542] docker0: port 2(vethefd1432) entered forwarding state
+[12521.639546] docker0: port 2(vethefd1432) entered forwarding state
+[12521.735091] eth0: renamed from vethc10ec55
+[12521.735300] IPv6: ADDRCONF(NETDEV_CHANGE): vethefd1432: link becomes ready
+[12524.026377] docker0: port 2(vethefd1432) entered disabled state
+[12524.026418] vethc10ec55: renamed from eth0
+[12524.039482] docker0: port 2(vethefd1432) entered disabled state
+[12524.039735] device vethefd1432 left promiscuous mode
+[12524.039737] docker0: port 2(vethefd1432) entered disabled state
+[12524.071641] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13260.056946] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13260.073108] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13260.084669] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13260.135664] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13260.149660] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13260.159955] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13260.165453] device veth836d646 entered promiscuous mode
+[13260.165495] IPv6: ADDRCONF(NETDEV_UP): veth836d646: link is not ready
+[13260.274739] eth0: renamed from veth4392a12
+[13260.274949] IPv6: ADDRCONF(NETDEV_CHANGE): veth836d646: link becomes ready
+[13260.274974] docker0: port 2(veth836d646) entered forwarding state
+[13260.274980] docker0: port 2(veth836d646) entered forwarding state
+[13260.403896] docker0: port 2(veth836d646) entered disabled state
+[13260.403933] veth4392a12: renamed from eth0
+[13260.415641] docker0: port 2(veth836d646) entered disabled state
+[13260.415922] device veth836d646 left promiscuous mode
+[13260.415924] docker0: port 2(veth836d646) entered disabled state
+[13260.441892] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13260.505368] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13260.520647] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13260.531549] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13260.535276] device vethe9d48ad entered promiscuous mode
+[13260.535314] IPv6: ADDRCONF(NETDEV_UP): vethe9d48ad: link is not ready
+[13260.535317] docker0: port 2(vethe9d48ad) entered forwarding state
+[13260.535321] docker0: port 2(vethe9d48ad) entered forwarding state
+[13260.622831] eth0: renamed from veth02e75c7
+[13260.623030] IPv6: ADDRCONF(NETDEV_CHANGE): vethe9d48ad: link becomes ready
+[13275.552066] docker0: port 2(vethe9d48ad) entered forwarding state
+[13308.714197] docker0: port 2(vethe9d48ad) entered disabled state
+[13308.714240] veth02e75c7: renamed from eth0
+[13308.728496] docker0: port 2(vethe9d48ad) entered disabled state
+[13308.728925] device vethe9d48ad left promiscuous mode
+[13308.728928] docker0: port 2(vethe9d48ad) entered disabled state
+[13308.750237] auplink[28007]: segfault at 7fffc518ab58 ip 00007fd661d539c9 sp 00007fffc518ab60 error 6 in libc-2.23.so[7fd661c5b000+1bf000]
+[13309.001980] aufs au_plink_put:450:dockerd[6318]: pseudo-link is not flushed
+[13309.013089] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13309.912285] auplink[28028]: segfault at 7ffd4e720f68 ip 00007f19b208d9c9 sp 00007ffd4e720f70 error 6 in libc-2.23.so[7f19b1f95000+1bf000]
+[13310.065609] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.081532] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.092375] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.098772] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.153589] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.167591] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.181255] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.229095] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.243938] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.256021] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.308899] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.323708] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.334488] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.398848] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.414662] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.425831] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.476062] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.493923] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.505714] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13310.509660] device veth71c7f61 entered promiscuous mode
+[13310.509704] IPv6: ADDRCONF(NETDEV_UP): veth71c7f61: link is not ready
+[13310.594730] eth0: renamed from veth5d60a35
+[13310.594912] IPv6: ADDRCONF(NETDEV_CHANGE): veth71c7f61: link becomes ready
+[13310.594928] docker0: port 2(veth71c7f61) entered forwarding state
+[13310.594933] docker0: port 2(veth71c7f61) entered forwarding state
+[13314.398848] docker0: port 2(veth71c7f61) entered disabled state
+[13314.398886] veth5d60a35: renamed from eth0
+[13314.411473] docker0: port 2(veth71c7f61) entered disabled state
+[13314.411752] device veth71c7f61 left promiscuous mode
+[13314.411754] docker0: port 2(veth71c7f61) entered disabled state
+[13314.448898] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13519.326585] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13519.341671] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13519.355032] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[13519.358960] device veth89ce7fc entered promiscuous mode
+[13519.359003] IPv6: ADDRCONF(NETDEV_UP): veth89ce7fc: link is not ready
+[13519.458667] eth0: renamed from vethe26e107
+[13519.458858] IPv6: ADDRCONF(NETDEV_CHANGE): veth89ce7fc: link becomes ready
+[13519.458874] docker0: port 2(veth89ce7fc) entered forwarding state
+[13519.458879] docker0: port 2(veth89ce7fc) entered forwarding state
+[13534.496091] docker0: port 2(veth89ce7fc) entered forwarding state
+[14672.254492] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14672.269440] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14672.280460] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14672.326033] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14672.341553] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14672.353047] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14672.399536] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14672.415012] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14672.425573] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14672.429619] device veth67005b3 entered promiscuous mode
+[14672.429662] IPv6: ADDRCONF(NETDEV_UP): veth67005b3: link is not ready
+[14672.510591] eth0: renamed from veth4b20d92
+[14672.510775] IPv6: ADDRCONF(NETDEV_CHANGE): veth67005b3: link becomes ready
+[14672.510789] docker0: port 3(veth67005b3) entered forwarding state
+[14672.510794] docker0: port 3(veth67005b3) entered forwarding state
+[14687.520060] docker0: port 3(veth67005b3) entered forwarding state
+[14688.242392] docker0: port 3(veth67005b3) entered disabled state
+[14688.242434] veth4b20d92: renamed from eth0
+[14688.251804] docker0: port 3(veth67005b3) entered disabled state
+[14688.252350] device veth67005b3 left promiscuous mode
+[14688.252353] docker0: port 3(veth67005b3) entered disabled state
+[14688.271686] auplink[28600]: segfault at 7ffc7e7e45f8 ip 00007f064d7bb9c9 sp 00007ffc7e7e4600 error 6 in libc-2.23.so[7f064d6c3000+1bf000]
+[14688.574210] aufs au_plink_put:450:dockerd[28391]: pseudo-link is not flushed
+[14688.590478] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14690.000374] auplink[28628]: segfault at 7ffeee4ba7d8 ip 00007fe3bf56a9c9 sp 00007ffeee4ba7e0 error 6 in libc-2.23.so[7fe3bf472000+1bf000]
+[14690.172276] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14690.190218] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14690.200550] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14690.253997] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14690.272402] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14690.282955] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14787.665803] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14787.682315] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14787.695878] aufs au_opts_verify:1597:dockerd[6328]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14787.700315] device veth8a8f985 entered promiscuous mode
+[14787.700357] IPv6: ADDRCONF(NETDEV_UP): veth8a8f985: link is not ready
+[14787.802809] eth0: renamed from vethdef0ea8
+[14787.803013] IPv6: ADDRCONF(NETDEV_CHANGE): veth8a8f985: link becomes ready
+[14787.803028] docker0: port 3(veth8a8f985) entered forwarding state
+[14787.803034] docker0: port 3(veth8a8f985) entered forwarding state
+[14787.867187] docker0: port 3(veth8a8f985) entered disabled state
+[14787.867243] vethdef0ea8: renamed from eth0
+[14787.879234] docker0: port 3(veth8a8f985) entered disabled state
+[14787.879517] device veth8a8f985 left promiscuous mode
+[14787.879519] docker0: port 3(veth8a8f985) entered disabled state
+[14815.464102] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14815.481646] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14815.494183] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14815.497922] device veth315e403 entered promiscuous mode
+[14815.497961] IPv6: ADDRCONF(NETDEV_UP): veth315e403: link is not ready
+[14815.590646] eth0: renamed from veth03f8ac5
+[14815.590838] IPv6: ADDRCONF(NETDEV_CHANGE): veth315e403: link becomes ready
+[14815.590855] docker0: port 3(veth315e403) entered forwarding state
+[14815.590861] docker0: port 3(veth315e403) entered forwarding state
+[14815.650194] docker0: port 3(veth315e403) entered disabled state
+[14815.650234] veth03f8ac5: renamed from eth0
+[14815.663235] docker0: port 3(veth315e403) entered disabled state
+[14815.663505] device veth315e403 left promiscuous mode
+[14815.663507] docker0: port 3(veth315e403) entered disabled state
+[14853.838480] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14853.854858] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14853.868334] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14853.872328] device veth432d986 entered promiscuous mode
+[14853.872366] IPv6: ADDRCONF(NETDEV_UP): veth432d986: link is not ready
+[14853.970714] eth0: renamed from veth786477d
+[14853.970893] IPv6: ADDRCONF(NETDEV_CHANGE): veth432d986: link becomes ready
+[14853.970908] docker0: port 3(veth432d986) entered forwarding state
+[14853.970914] docker0: port 3(veth432d986) entered forwarding state
+[14854.028727] docker0: port 3(veth432d986) entered disabled state
+[14854.028764] veth786477d: renamed from eth0
+[14854.043609] docker0: port 3(veth432d986) entered disabled state
+[14854.043854] device veth432d986 left promiscuous mode
+[14854.043857] docker0: port 3(veth432d986) entered disabled state
+[14854.117238] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14854.119855] device veth9c98394 entered promiscuous mode
+[14854.119895] IPv6: ADDRCONF(NETDEV_UP): veth9c98394: link is not ready
+[14854.119898] docker0: port 3(veth9c98394) entered forwarding state
+[14854.119902] docker0: port 3(veth9c98394) entered forwarding state
+[14854.218593] eth0: renamed from veth937f6dc
+[14854.218771] IPv6: ADDRCONF(NETDEV_CHANGE): veth9c98394: link becomes ready
+[14854.279372] docker0: port 3(veth9c98394) entered disabled state
+[14854.279425] veth937f6dc: renamed from eth0
+[14854.291760] docker0: port 3(veth9c98394) entered disabled state
+[14854.292028] device veth9c98394 left promiscuous mode
+[14854.292030] docker0: port 3(veth9c98394) entered disabled state
+[14854.466706] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14854.470530] device veth2a4f59d entered promiscuous mode
+[14854.471178] IPv6: ADDRCONF(NETDEV_UP): veth2a4f59d: link is not ready
+[14854.471182] docker0: port 3(veth2a4f59d) entered forwarding state
+[14854.471187] docker0: port 3(veth2a4f59d) entered forwarding state
+[14854.563045] eth0: renamed from vethc3149cd
+[14854.563230] IPv6: ADDRCONF(NETDEV_CHANGE): veth2a4f59d: link becomes ready
+[14854.626191] docker0: port 3(veth2a4f59d) entered disabled state
+[14854.626250] vethc3149cd: renamed from eth0
+[14854.639335] docker0: port 3(veth2a4f59d) entered disabled state
+[14854.639576] device veth2a4f59d left promiscuous mode
+[14854.639578] docker0: port 3(veth2a4f59d) entered disabled state
+[14855.014705] aufs au_opts_verify:1597:dockerd[13917]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14855.018173] device vethcedff69 entered promiscuous mode
+[14855.018228] IPv6: ADDRCONF(NETDEV_UP): vethcedff69: link is not ready
+[14855.018231] docker0: port 3(vethcedff69) entered forwarding state
+[14855.018235] docker0: port 3(vethcedff69) entered forwarding state
+[14855.110666] eth0: renamed from veth521bc91
+[14855.110860] IPv6: ADDRCONF(NETDEV_CHANGE): vethcedff69: link becomes ready
+[14855.177343] docker0: port 3(vethcedff69) entered disabled state
+[14855.177383] veth521bc91: renamed from eth0
+[14855.191632] docker0: port 3(vethcedff69) entered disabled state
+[14855.191890] device vethcedff69 left promiscuous mode
+[14855.191892] docker0: port 3(vethcedff69) entered disabled state
+[14855.965680] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14855.968824] device veth76dbc5c entered promiscuous mode
+[14855.968877] IPv6: ADDRCONF(NETDEV_UP): veth76dbc5c: link is not ready
+[14855.968880] docker0: port 3(veth76dbc5c) entered forwarding state
+[14855.968885] docker0: port 3(veth76dbc5c) entered forwarding state
+[14856.066925] eth0: renamed from vetha01a03f
+[14856.067121] IPv6: ADDRCONF(NETDEV_CHANGE): veth76dbc5c: link becomes ready
+[14856.130252] docker0: port 3(veth76dbc5c) entered disabled state
+[14856.130293] vetha01a03f: renamed from eth0
+[14856.143596] docker0: port 3(veth76dbc5c) entered disabled state
+[14856.143842] device veth76dbc5c left promiscuous mode
+[14856.143844] docker0: port 3(veth76dbc5c) entered disabled state
+[14857.718898] aufs au_opts_verify:1597:dockerd[13917]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14857.721950] device veth8af01bd entered promiscuous mode
+[14857.722001] IPv6: ADDRCONF(NETDEV_UP): veth8af01bd: link is not ready
+[14857.722005] docker0: port 3(veth8af01bd) entered forwarding state
+[14857.722009] docker0: port 3(veth8af01bd) entered forwarding state
+[14857.834841] eth0: renamed from vethf08bcac
+[14857.835035] IPv6: ADDRCONF(NETDEV_CHANGE): veth8af01bd: link becomes ready
+[14857.898349] docker0: port 3(veth8af01bd) entered disabled state
+[14857.898399] vethf08bcac: renamed from eth0
+[14857.911622] docker0: port 3(veth8af01bd) entered disabled state
+[14857.911888] device veth8af01bd left promiscuous mode
+[14857.911891] docker0: port 3(veth8af01bd) entered disabled state
+[14861.086970] aufs au_opts_verify:1597:dockerd[13917]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14861.091649] device veth978982c entered promiscuous mode
+[14861.091693] IPv6: ADDRCONF(NETDEV_UP): veth978982c: link is not ready
+[14861.186817] eth0: renamed from vethf728980
+[14861.187014] IPv6: ADDRCONF(NETDEV_CHANGE): veth978982c: link becomes ready
+[14861.187030] docker0: port 3(veth978982c) entered forwarding state
+[14861.187036] docker0: port 3(veth978982c) entered forwarding state
+[14861.253591] docker0: port 3(veth978982c) entered disabled state
+[14861.253645] vethf728980: renamed from eth0
+[14861.267202] docker0: port 3(veth978982c) entered disabled state
+[14861.267446] device veth978982c left promiscuous mode
+[14861.267449] docker0: port 3(veth978982c) entered disabled state
+[14867.641362] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14867.645904] device vethc40a250 entered promiscuous mode
+[14867.645949] IPv6: ADDRCONF(NETDEV_UP): vethc40a250: link is not ready
+[14867.738753] eth0: renamed from veth1717ea1
+[14867.738931] IPv6: ADDRCONF(NETDEV_CHANGE): vethc40a250: link becomes ready
+[14867.738946] docker0: port 3(vethc40a250) entered forwarding state
+[14867.738952] docker0: port 3(vethc40a250) entered forwarding state
+[14867.795357] docker0: port 3(vethc40a250) entered disabled state
+[14867.795401] veth1717ea1: renamed from eth0
+[14867.807626] docker0: port 3(vethc40a250) entered disabled state
+[14867.807884] device vethc40a250 left promiscuous mode
+[14867.807887] docker0: port 3(vethc40a250) entered disabled state
+[14880.584029] aufs au_opts_verify:1597:dockerd[13917]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14880.588584] device vethed5d721 entered promiscuous mode
+[14880.588631] IPv6: ADDRCONF(NETDEV_UP): vethed5d721: link is not ready
+[14880.687055] eth0: renamed from veth631c72c
+[14880.687288] IPv6: ADDRCONF(NETDEV_CHANGE): vethed5d721: link becomes ready
+[14880.687327] docker0: port 3(vethed5d721) entered forwarding state
+[14880.687345] docker0: port 3(vethed5d721) entered forwarding state
+[14880.749705] docker0: port 3(vethed5d721) entered disabled state
+[14880.749744] veth631c72c: renamed from eth0
+[14880.763613] docker0: port 3(vethed5d721) entered disabled state
+[14880.763882] device vethed5d721 left promiscuous mode
+[14880.763883] docker0: port 3(vethed5d721) entered disabled state
+[14906.088162] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14906.104004] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14906.117313] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14906.121589] device vethe7f7c4a entered promiscuous mode
+[14906.121632] IPv6: ADDRCONF(NETDEV_UP): vethe7f7c4a: link is not ready
+[14906.214878] eth0: renamed from veth1a18558
+[14906.215082] IPv6: ADDRCONF(NETDEV_CHANGE): vethe7f7c4a: link becomes ready
+[14906.215099] docker0: port 3(vethe7f7c4a) entered forwarding state
+[14906.215105] docker0: port 3(vethe7f7c4a) entered forwarding state
+[14906.338474] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[14906.343029] device veth173aab8 entered promiscuous mode
+[14906.343077] IPv6: ADDRCONF(NETDEV_UP): veth173aab8: link is not ready
+[14906.343080] docker0: port 4(veth173aab8) entered forwarding state
+[14906.343085] docker0: port 4(veth173aab8) entered forwarding state
+[14906.365015] docker0: port 4(veth173aab8) entered disabled state
+[14906.365280] device veth173aab8 left promiscuous mode
+[14906.365282] docker0: port 4(veth173aab8) entered disabled state
+[14921.248090] docker0: port 3(vethe7f7c4a) entered forwarding state
+[14979.085018] docker0: port 3(vethe7f7c4a) entered disabled state
+[14979.085060] veth1a18558: renamed from eth0
+[14979.099985] docker0: port 3(vethe7f7c4a) entered disabled state
+[14979.100315] device vethe7f7c4a left promiscuous mode
+[14979.100317] docker0: port 3(vethe7f7c4a) entered disabled state
+[15014.602395] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15014.617300] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15014.628760] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15028.061870] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15028.077705] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15028.090040] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15028.094240] device vethdbd682b entered promiscuous mode
+[15028.094283] IPv6: ADDRCONF(NETDEV_UP): vethdbd682b: link is not ready
+[15028.190812] eth0: renamed from veth83097ee
+[15028.191042] IPv6: ADDRCONF(NETDEV_CHANGE): vethdbd682b: link becomes ready
+[15028.191057] docker0: port 3(vethdbd682b) entered forwarding state
+[15028.191074] docker0: port 3(vethdbd682b) entered forwarding state
+[15028.314331] docker0: port 3(vethdbd682b) entered disabled state
+[15028.314384] veth83097ee: renamed from eth0
+[15028.329893] docker0: port 3(vethdbd682b) entered disabled state
+[15028.330179] device vethdbd682b left promiscuous mode
+[15028.330181] docker0: port 3(vethdbd682b) entered disabled state
+[15028.401583] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15028.406999] device veth4518185 entered promiscuous mode
+[15028.407039] IPv6: ADDRCONF(NETDEV_UP): veth4518185: link is not ready
+[15028.407042] docker0: port 3(veth4518185) entered forwarding state
+[15028.407046] docker0: port 3(veth4518185) entered forwarding state
+[15028.498759] eth0: renamed from veth3f15586
+[15028.498961] IPv6: ADDRCONF(NETDEV_CHANGE): veth4518185: link becomes ready
+[15028.611224] docker0: port 3(veth4518185) entered disabled state
+[15028.611267] veth3f15586: renamed from eth0
+[15028.623863] docker0: port 3(veth4518185) entered disabled state
+[15028.624230] device veth4518185 left promiscuous mode
+[15028.624232] docker0: port 3(veth4518185) entered disabled state
+[15028.798814] aufs au_opts_verify:1597:dockerd[6313]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15028.804148] device vetha719a69 entered promiscuous mode
+[15028.804191] IPv6: ADDRCONF(NETDEV_UP): vetha719a69: link is not ready
+[15028.804195] docker0: port 3(vetha719a69) entered forwarding state
+[15028.804199] docker0: port 3(vetha719a69) entered forwarding state
+[15028.894750] eth0: renamed from veth656734b
+[15028.894942] IPv6: ADDRCONF(NETDEV_CHANGE): vetha719a69: link becomes ready
+[15029.017577] docker0: port 3(vetha719a69) entered disabled state
+[15029.017621] veth656734b: renamed from eth0
+[15029.031689] docker0: port 3(vetha719a69) entered disabled state
+[15029.031960] device vetha719a69 left promiscuous mode
+[15029.031962] docker0: port 3(vetha719a69) entered disabled state
+[15029.404621] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15029.407573] device veth5d7da75 entered promiscuous mode
+[15029.407616] IPv6: ADDRCONF(NETDEV_UP): veth5d7da75: link is not ready
+[15029.407619] docker0: port 3(veth5d7da75) entered forwarding state
+[15029.407623] docker0: port 3(veth5d7da75) entered forwarding state
+[15029.502851] eth0: renamed from veth326c80f
+[15029.503050] IPv6: ADDRCONF(NETDEV_CHANGE): veth5d7da75: link becomes ready
+[15029.613001] docker0: port 3(veth5d7da75) entered disabled state
+[15029.613042] veth326c80f: renamed from eth0
+[15029.627827] docker0: port 3(veth5d7da75) entered disabled state
+[15029.628191] device veth5d7da75 left promiscuous mode
+[15029.628193] docker0: port 3(veth5d7da75) entered disabled state
+[15030.401473] aufs au_opts_verify:1597:dockerd[13917]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15030.405318] device veth33598e7 entered promiscuous mode
+[15030.405973] IPv6: ADDRCONF(NETDEV_UP): veth33598e7: link is not ready
+[15030.405978] docker0: port 3(veth33598e7) entered forwarding state
+[15030.405983] docker0: port 3(veth33598e7) entered forwarding state
+[15030.498774] eth0: renamed from veth73988f2
+[15030.498983] IPv6: ADDRCONF(NETDEV_CHANGE): veth33598e7: link becomes ready
+[15030.616654] docker0: port 3(veth33598e7) entered disabled state
+[15030.616695] veth73988f2: renamed from eth0
+[15030.631724] docker0: port 3(veth33598e7) entered disabled state
+[15030.631954] device veth33598e7 left promiscuous mode
+[15030.631956] docker0: port 3(veth33598e7) entered disabled state
+[15032.205717] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15032.210364] device vethcaa32a9 entered promiscuous mode
+[15032.210407] IPv6: ADDRCONF(NETDEV_UP): vethcaa32a9: link is not ready
+[15032.306762] eth0: renamed from vethcdf8f4b
+[15032.306961] IPv6: ADDRCONF(NETDEV_CHANGE): vethcaa32a9: link becomes ready
+[15032.306976] docker0: port 3(vethcaa32a9) entered forwarding state
+[15032.306981] docker0: port 3(vethcaa32a9) entered forwarding state
+[15032.435895] docker0: port 3(vethcaa32a9) entered disabled state
+[15032.435936] vethcdf8f4b: renamed from eth0
+[15032.455233] docker0: port 3(vethcaa32a9) entered disabled state
+[15032.455509] device vethcaa32a9 left promiscuous mode
+[15032.455511] docker0: port 3(vethcaa32a9) entered disabled state
+[15035.624796] aufs au_opts_verify:1597:dockerd[6313]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15035.629740] device veth7b8d178 entered promiscuous mode
+[15035.629784] IPv6: ADDRCONF(NETDEV_UP): veth7b8d178: link is not ready
+[15035.726769] eth0: renamed from vethe82ce4a
+[15035.726963] IPv6: ADDRCONF(NETDEV_CHANGE): veth7b8d178: link becomes ready
+[15035.726977] docker0: port 3(veth7b8d178) entered forwarding state
+[15035.726983] docker0: port 3(veth7b8d178) entered forwarding state
+[15035.844683] docker0: port 3(veth7b8d178) entered disabled state
+[15035.844724] vethe82ce4a: renamed from eth0
+[15035.859629] docker0: port 3(veth7b8d178) entered disabled state
+[15035.859878] device veth7b8d178 left promiscuous mode
+[15035.859881] docker0: port 3(veth7b8d178) entered disabled state
+[15042.233365] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15042.238659] device veth10a9322 entered promiscuous mode
+[15042.238725] IPv6: ADDRCONF(NETDEV_UP): veth10a9322: link is not ready
+[15042.342822] eth0: renamed from vetha8fa4eb
+[15042.343010] IPv6: ADDRCONF(NETDEV_CHANGE): veth10a9322: link becomes ready
+[15042.343024] docker0: port 3(veth10a9322) entered forwarding state
+[15042.343030] docker0: port 3(veth10a9322) entered forwarding state
+[15042.462515] docker0: port 3(veth10a9322) entered disabled state
+[15042.462558] vetha8fa4eb: renamed from eth0
+[15042.475526] docker0: port 3(veth10a9322) entered disabled state
+[15042.475797] device veth10a9322 left promiscuous mode
+[15042.475799] docker0: port 3(veth10a9322) entered disabled state
+[15055.251453] aufs au_opts_verify:1597:dockerd[13917]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15055.256055] device veth9ee036b entered promiscuous mode
+[15055.256100] IPv6: ADDRCONF(NETDEV_UP): veth9ee036b: link is not ready
+[15055.350700] eth0: renamed from veth87b8195
+[15055.350894] IPv6: ADDRCONF(NETDEV_CHANGE): veth9ee036b: link becomes ready
+[15055.350910] docker0: port 3(veth9ee036b) entered forwarding state
+[15055.350916] docker0: port 3(veth9ee036b) entered forwarding state
+[15055.469936] docker0: port 3(veth9ee036b) entered disabled state
+[15055.469978] veth87b8195: renamed from eth0
+[15055.483634] docker0: port 3(veth9ee036b) entered disabled state
+[15055.483894] device veth9ee036b left promiscuous mode
+[15055.483896] docker0: port 3(veth9ee036b) entered disabled state
+[15081.058599] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15081.063249] device veth4e1f283 entered promiscuous mode
+[15081.063288] IPv6: ADDRCONF(NETDEV_UP): veth4e1f283: link is not ready
+[15081.158795] eth0: renamed from veth86fdb86
+[15081.159000] IPv6: ADDRCONF(NETDEV_CHANGE): veth4e1f283: link becomes ready
+[15081.159015] docker0: port 3(veth4e1f283) entered forwarding state
+[15081.159020] docker0: port 3(veth4e1f283) entered forwarding state
+[15081.276920] docker0: port 3(veth4e1f283) entered disabled state
+[15081.276961] veth86fdb86: renamed from eth0
+[15081.292039] docker0: port 3(veth4e1f283) entered disabled state
+[15081.292342] device veth4e1f283 left promiscuous mode
+[15081.292344] docker0: port 3(veth4e1f283) entered disabled state
+[15106.971968] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15106.987803] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15107.001162] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15107.006000] device vethd0ef16e entered promiscuous mode
+[15107.006057] IPv6: ADDRCONF(NETDEV_UP): vethd0ef16e: link is not ready
+[15107.102785] eth0: renamed from veth2e9aa63
+[15107.102976] IPv6: ADDRCONF(NETDEV_CHANGE): vethd0ef16e: link becomes ready
+[15107.102991] docker0: port 3(vethd0ef16e) entered forwarding state
+[15107.102997] docker0: port 3(vethd0ef16e) entered forwarding state
+[15107.222001] docker0: port 3(vethd0ef16e) entered disabled state
+[15107.222041] veth2e9aa63: renamed from eth0
+[15107.236013] docker0: port 3(vethd0ef16e) entered disabled state
+[15107.236380] device vethd0ef16e left promiscuous mode
+[15107.236383] docker0: port 3(vethd0ef16e) entered disabled state
+[15107.311108] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15107.316824] device veth4c22223 entered promiscuous mode
+[15107.316868] IPv6: ADDRCONF(NETDEV_UP): veth4c22223: link is not ready
+[15107.316872] docker0: port 3(veth4c22223) entered forwarding state
+[15107.316876] docker0: port 3(veth4c22223) entered forwarding state
+[15107.414861] eth0: renamed from veth8b4fd5b
+[15107.415056] IPv6: ADDRCONF(NETDEV_CHANGE): veth4c22223: link becomes ready
+[15107.534816] docker0: port 3(veth4c22223) entered disabled state
+[15107.534861] veth8b4fd5b: renamed from eth0
+[15107.547855] docker0: port 3(veth4c22223) entered disabled state
+[15107.548293] device veth4c22223 left promiscuous mode
+[15107.548296] docker0: port 3(veth4c22223) entered disabled state
+[15107.722316] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15107.728044] device vethf4437a8 entered promiscuous mode
+[15107.728062] IPv6: ADDRCONF(NETDEV_UP): vethf4437a8: link is not ready
+[15107.728062] docker0: port 3(vethf4437a8) entered forwarding state
+[15107.728062] docker0: port 3(vethf4437a8) entered forwarding state
+[15107.835069] eth0: renamed from veth435ae07
+[15107.835298] IPv6: ADDRCONF(NETDEV_CHANGE): vethf4437a8: link becomes ready
+[15107.954470] docker0: port 3(vethf4437a8) entered disabled state
+[15107.954511] veth435ae07: renamed from eth0
+[15107.967593] docker0: port 3(vethf4437a8) entered disabled state
+[15107.967849] device vethf4437a8 left promiscuous mode
+[15107.967851] docker0: port 3(vethf4437a8) entered disabled state
+[15108.342131] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15108.345232] device veth904e40a entered promiscuous mode
+[15108.345286] IPv6: ADDRCONF(NETDEV_UP): veth904e40a: link is not ready
+[15108.345290] docker0: port 3(veth904e40a) entered forwarding state
+[15108.345294] docker0: port 3(veth904e40a) entered forwarding state
+[15108.446967] eth0: renamed from vethb5f91af
+[15108.447167] IPv6: ADDRCONF(NETDEV_CHANGE): veth904e40a: link becomes ready
+[15108.563045] docker0: port 3(veth904e40a) entered disabled state
+[15108.563099] vethb5f91af: renamed from eth0
+[15108.575807] docker0: port 3(veth904e40a) entered disabled state
+[15108.576200] device veth904e40a left promiscuous mode
+[15108.576203] docker0: port 3(veth904e40a) entered disabled state
+[15109.351642] aufs au_opts_verify:1597:dockerd[13917]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15109.357596] device veth1d11e09 entered promiscuous mode
+[15109.357642] IPv6: ADDRCONF(NETDEV_UP): veth1d11e09: link is not ready
+[15109.357645] docker0: port 3(veth1d11e09) entered forwarding state
+[15109.357650] docker0: port 3(veth1d11e09) entered forwarding state
+[15109.450785] eth0: renamed from veth53d55af
+[15109.450977] IPv6: ADDRCONF(NETDEV_CHANGE): veth1d11e09: link becomes ready
+[15109.571158] docker0: port 3(veth1d11e09) entered disabled state
+[15109.571198] veth53d55af: renamed from eth0
+[15109.583532] docker0: port 3(veth1d11e09) entered disabled state
+[15109.583797] device veth1d11e09 left promiscuous mode
+[15109.583799] docker0: port 3(veth1d11e09) entered disabled state
+[15111.158713] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15111.164291] device vetha5e723d entered promiscuous mode
+[15111.164335] IPv6: ADDRCONF(NETDEV_UP): vetha5e723d: link is not ready
+[15111.258667] eth0: renamed from veth8a09769
+[15111.258839] IPv6: ADDRCONF(NETDEV_CHANGE): vetha5e723d: link becomes ready
+[15111.258853] docker0: port 3(vetha5e723d) entered forwarding state
+[15111.258858] docker0: port 3(vetha5e723d) entered forwarding state
+[15111.371482] docker0: port 3(vetha5e723d) entered disabled state
+[15111.371536] veth8a09769: renamed from eth0
+[15111.383291] docker0: port 3(vetha5e723d) entered disabled state
+[15111.383534] device vetha5e723d left promiscuous mode
+[15111.383537] docker0: port 3(vetha5e723d) entered disabled state
+[15114.558589] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15114.565158] device veth3e58842 entered promiscuous mode
+[15114.565202] IPv6: ADDRCONF(NETDEV_UP): veth3e58842: link is not ready
+[15114.658680] eth0: renamed from vethf52ad12
+[15114.658880] IPv6: ADDRCONF(NETDEV_CHANGE): veth3e58842: link becomes ready
+[15114.658894] docker0: port 3(veth3e58842) entered forwarding state
+[15114.658900] docker0: port 3(veth3e58842) entered forwarding state
+[15114.770465] docker0: port 3(veth3e58842) entered disabled state
+[15114.770507] vethf52ad12: renamed from eth0
+[15114.783478] docker0: port 3(veth3e58842) entered disabled state
+[15114.783722] device veth3e58842 left promiscuous mode
+[15114.783724] docker0: port 3(veth3e58842) entered disabled state
+[15121.159133] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15121.163680] device veth317f077 entered promiscuous mode
+[15121.163721] IPv6: ADDRCONF(NETDEV_UP): veth317f077: link is not ready
+[15121.258698] eth0: renamed from vethe7670a4
+[15121.258886] IPv6: ADDRCONF(NETDEV_CHANGE): veth317f077: link becomes ready
+[15121.258900] docker0: port 3(veth317f077) entered forwarding state
+[15121.258905] docker0: port 3(veth317f077) entered forwarding state
+[15121.370351] docker0: port 3(veth317f077) entered disabled state
+[15121.370391] vethe7670a4: renamed from eth0
+[15121.383480] docker0: port 3(veth317f077) entered disabled state
+[15121.383726] device veth317f077 left promiscuous mode
+[15121.383729] docker0: port 3(veth317f077) entered disabled state
+[15134.158401] aufs au_opts_verify:1597:dockerd[13917]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15134.163014] device vethb8623bf entered promiscuous mode
+[15134.163056] IPv6: ADDRCONF(NETDEV_UP): vethb8623bf: link is not ready
+[15134.254818] eth0: renamed from vetheaca9d2
+[15134.255013] IPv6: ADDRCONF(NETDEV_CHANGE): vethb8623bf: link becomes ready
+[15134.255027] docker0: port 3(vethb8623bf) entered forwarding state
+[15134.255032] docker0: port 3(vethb8623bf) entered forwarding state
+[15134.359411] docker0: port 3(vethb8623bf) entered disabled state
+[15134.359448] vetheaca9d2: renamed from eth0
+[15134.371751] docker0: port 3(vethb8623bf) entered disabled state
+[15134.372013] device vethb8623bf left promiscuous mode
+[15134.372015] docker0: port 3(vethb8623bf) entered disabled state
+[15173.556865] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15173.572170] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15173.584783] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15173.589753] device vethd26ef9c entered promiscuous mode
+[15173.589796] IPv6: ADDRCONF(NETDEV_UP): vethd26ef9c: link is not ready
+[15173.686789] eth0: renamed from veth7696cd5
+[15173.686989] IPv6: ADDRCONF(NETDEV_CHANGE): vethd26ef9c: link becomes ready
+[15173.687004] docker0: port 3(vethd26ef9c) entered forwarding state
+[15173.687010] docker0: port 3(vethd26ef9c) entered forwarding state
+[15173.811895] docker0: port 3(vethd26ef9c) entered disabled state
+[15173.811936] veth7696cd5: renamed from eth0
+[15173.828056] docker0: port 3(vethd26ef9c) entered disabled state
+[15173.828433] device vethd26ef9c left promiscuous mode
+[15173.828435] docker0: port 3(vethd26ef9c) entered disabled state
+[15173.899473] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15173.904833] device veth1ecd514 entered promiscuous mode
+[15173.904877] IPv6: ADDRCONF(NETDEV_UP): veth1ecd514: link is not ready
+[15173.904881] docker0: port 3(veth1ecd514) entered forwarding state
+[15173.904885] docker0: port 3(veth1ecd514) entered forwarding state
+[15173.998741] eth0: renamed from veth807e408
+[15173.998925] IPv6: ADDRCONF(NETDEV_CHANGE): veth1ecd514: link becomes ready
+[15174.121779] docker0: port 3(veth1ecd514) entered disabled state
+[15174.121822] veth807e408: renamed from eth0
+[15174.136198] docker0: port 3(veth1ecd514) entered disabled state
+[15174.136458] device veth1ecd514 left promiscuous mode
+[15174.136460] docker0: port 3(veth1ecd514) entered disabled state
+[15174.309900] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15174.315628] device veth3936616 entered promiscuous mode
+[15174.315675] IPv6: ADDRCONF(NETDEV_UP): veth3936616: link is not ready
+[15174.315679] docker0: port 3(veth3936616) entered forwarding state
+[15174.315683] docker0: port 3(veth3936616) entered forwarding state
+[15174.410910] eth0: renamed from vethbd2bd18
+[15174.411112] IPv6: ADDRCONF(NETDEV_CHANGE): veth3936616: link becomes ready
+[15174.522203] docker0: port 3(veth3936616) entered disabled state
+[15174.522246] vethbd2bd18: renamed from eth0
+[15174.535867] docker0: port 3(veth3936616) entered disabled state
+[15174.536227] device veth3936616 left promiscuous mode
+[15174.536230] docker0: port 3(veth3936616) entered disabled state
+[15174.910667] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15174.914534] device vethc9d2426 entered promiscuous mode
+[15174.914576] IPv6: ADDRCONF(NETDEV_UP): vethc9d2426: link is not ready
+[15174.914579] docker0: port 3(vethc9d2426) entered forwarding state
+[15174.914583] docker0: port 3(vethc9d2426) entered forwarding state
+[15175.006652] eth0: renamed from vethb51b9ac
+[15175.006839] IPv6: ADDRCONF(NETDEV_CHANGE): vethc9d2426: link becomes ready
+[15175.127410] docker0: port 3(vethc9d2426) entered disabled state
+[15175.127460] vethb51b9ac: renamed from eth0
+[15175.139784] docker0: port 3(vethc9d2426) entered disabled state
+[15175.140026] device vethc9d2426 left promiscuous mode
+[15175.140029] docker0: port 3(vethc9d2426) entered disabled state
+[15175.917897] aufs au_opts_verify:1597:dockerd[13917]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15175.924830] device veth0679b01 entered promiscuous mode
+[15175.924874] IPv6: ADDRCONF(NETDEV_UP): veth0679b01: link is not ready
+[15175.924877] docker0: port 3(veth0679b01) entered forwarding state
+[15175.924882] docker0: port 3(veth0679b01) entered forwarding state
+[15176.014736] eth0: renamed from vetha6c741c
+[15176.014934] IPv6: ADDRCONF(NETDEV_CHANGE): veth0679b01: link becomes ready
+[15176.133205] docker0: port 3(veth0679b01) entered disabled state
+[15176.133257] vetha6c741c: renamed from eth0
+[15176.150549] docker0: port 3(veth0679b01) entered disabled state
+[15176.150809] device veth0679b01 left promiscuous mode
+[15176.150811] docker0: port 3(veth0679b01) entered disabled state
+[15177.722277] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15177.726808] device vethd3e2a37 entered promiscuous mode
+[15177.726854] IPv6: ADDRCONF(NETDEV_UP): vethd3e2a37: link is not ready
+[15177.822931] eth0: renamed from vethd6a75c5
+[15177.823129] IPv6: ADDRCONF(NETDEV_CHANGE): vethd3e2a37: link becomes ready
+[15177.823145] docker0: port 3(vethd3e2a37) entered forwarding state
+[15177.823151] docker0: port 3(vethd3e2a37) entered forwarding state
+[15177.944506] docker0: port 3(vethd3e2a37) entered disabled state
+[15177.944548] vethd6a75c5: renamed from eth0
+[15177.972276] docker0: port 3(vethd3e2a37) entered disabled state
+[15177.972533] device vethd3e2a37 left promiscuous mode
+[15177.972535] docker0: port 3(vethd3e2a37) entered disabled state
+[15181.130550] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15181.135311] device veth9dfa713 entered promiscuous mode
+[15181.135358] IPv6: ADDRCONF(NETDEV_UP): veth9dfa713: link is not ready
+[15181.234620] eth0: renamed from vethac8405b
+[15181.234808] IPv6: ADDRCONF(NETDEV_CHANGE): veth9dfa713: link becomes ready
+[15181.234824] docker0: port 3(veth9dfa713) entered forwarding state
+[15181.234829] docker0: port 3(veth9dfa713) entered forwarding state
+[15181.353671] docker0: port 3(veth9dfa713) entered disabled state
+[15181.353710] vethac8405b: renamed from eth0
+[15181.368384] docker0: port 3(veth9dfa713) entered disabled state
+[15181.368653] device veth9dfa713 left promiscuous mode
+[15181.368655] docker0: port 3(veth9dfa713) entered disabled state
+[15187.741143] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15187.745647] device veth0b28b3c entered promiscuous mode
+[15187.745734] IPv6: ADDRCONF(NETDEV_UP): veth0b28b3c: link is not ready
+[15187.838750] eth0: renamed from vethc1f52a3
+[15187.838921] IPv6: ADDRCONF(NETDEV_CHANGE): veth0b28b3c: link becomes ready
+[15187.838935] docker0: port 3(veth0b28b3c) entered forwarding state
+[15187.838941] docker0: port 3(veth0b28b3c) entered forwarding state
+[15187.945284] docker0: port 3(veth0b28b3c) entered disabled state
+[15187.945322] vethc1f52a3: renamed from eth0
+[15187.960031] docker0: port 3(veth0b28b3c) entered disabled state
+[15187.960400] device veth0b28b3c left promiscuous mode
+[15187.960402] docker0: port 3(veth0b28b3c) entered disabled state
+[15200.734550] aufs au_opts_verify:1597:dockerd[13917]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15200.739188] device veth5d65f76 entered promiscuous mode
+[15200.739241] IPv6: ADDRCONF(NETDEV_UP): veth5d65f76: link is not ready
+[15200.858810] eth0: renamed from vetha9cdb9e
+[15200.859002] IPv6: ADDRCONF(NETDEV_CHANGE): veth5d65f76: link becomes ready
+[15200.859018] docker0: port 3(veth5d65f76) entered forwarding state
+[15200.859023] docker0: port 3(veth5d65f76) entered forwarding state
+[15200.975580] docker0: port 3(veth5d65f76) entered disabled state
+[15200.975621] vetha9cdb9e: renamed from eth0
+[15200.987978] docker0: port 3(veth5d65f76) entered disabled state
+[15200.988316] device veth5d65f76 left promiscuous mode
+[15200.988318] docker0: port 3(veth5d65f76) entered disabled state
+[15226.563315] aufs au_opts_verify:1597:dockerd[6431]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15226.568295] device vethddcff01 entered promiscuous mode
+[15226.568340] IPv6: ADDRCONF(NETDEV_UP): vethddcff01: link is not ready
+[15226.666863] eth0: renamed from vethc805927
+[15226.667088] IPv6: ADDRCONF(NETDEV_CHANGE): vethddcff01: link becomes ready
+[15226.667103] docker0: port 3(vethddcff01) entered forwarding state
+[15226.667119] docker0: port 3(vethddcff01) entered forwarding state
+[15226.786165] docker0: port 3(vethddcff01) entered disabled state
+[15226.786207] vethc805927: renamed from eth0
+[15226.800650] docker0: port 3(vethddcff01) entered disabled state
+[15226.800927] device vethddcff01 left promiscuous mode
+[15226.800929] docker0: port 3(vethddcff01) entered disabled state
+[15277.975308] aufs au_opts_verify:1597:dockerd[7598]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15277.979975] device vethb7d1bed entered promiscuous mode
+[15277.980018] IPv6: ADDRCONF(NETDEV_UP): vethb7d1bed: link is not ready
+[15278.078845] eth0: renamed from veth4beffb6
+[15278.079034] IPv6: ADDRCONF(NETDEV_CHANGE): vethb7d1bed: link becomes ready
+[15278.079050] docker0: port 3(vethb7d1bed) entered forwarding state
+[15278.079056] docker0: port 3(vethb7d1bed) entered forwarding state
+[15278.198270] docker0: port 3(vethb7d1bed) entered disabled state
+[15278.198310] veth4beffb6: renamed from eth0
+[15278.211862] docker0: port 3(vethb7d1bed) entered disabled state
+[15278.212244] device vethb7d1bed left promiscuous mode
+[15278.212247] docker0: port 3(vethb7d1bed) entered disabled state
+[15300.698615] docker0: port 1(veth7098017) entered disabled state
+[15300.698672] veth41f10dd: renamed from eth0
+[15300.714660] docker0: port 1(veth7098017) entered disabled state
+[15300.714924] device veth7098017 left promiscuous mode
+[15300.714926] docker0: port 1(veth7098017) entered disabled state
+[15300.762055] docker0: port 2(veth89ce7fc) entered disabled state
+[15300.762101] vethe26e107: renamed from eth0
+[15300.777767] docker0: port 2(veth89ce7fc) entered disabled state
+[15300.778010] device veth89ce7fc left promiscuous mode
+[15300.778012] docker0: port 2(veth89ce7fc) entered disabled state
+[15359.073158] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15359.089334] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15359.101718] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15359.105871] device veth56b1129 entered promiscuous mode
+[15359.105920] IPv6: ADDRCONF(NETDEV_UP): veth56b1129: link is not ready
+[15359.198626] eth0: renamed from veth912e3dc
+[15359.198808] IPv6: ADDRCONF(NETDEV_CHANGE): veth56b1129: link becomes ready
+[15359.198825] docker0: port 1(veth56b1129) entered forwarding state
+[15359.198830] docker0: port 1(veth56b1129) entered forwarding state
+[15359.283558] docker0: port 1(veth56b1129) entered disabled state
+[15359.283598] veth912e3dc: renamed from eth0
+[15359.295403] docker0: port 1(veth56b1129) entered disabled state
+[15359.295654] device veth56b1129 left promiscuous mode
+[15359.295667] docker0: port 1(veth56b1129) entered disabled state
+[15359.372340] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15359.375092] device veth669563e entered promiscuous mode
+[15359.375141] IPv6: ADDRCONF(NETDEV_UP): veth669563e: link is not ready
+[15359.375145] docker0: port 1(veth669563e) entered forwarding state
+[15359.375149] docker0: port 1(veth669563e) entered forwarding state
+[15359.466826] eth0: renamed from vethedbd56d
+[15359.467020] IPv6: ADDRCONF(NETDEV_CHANGE): veth669563e: link becomes ready
+[15359.548935] docker0: port 1(veth669563e) entered disabled state
+[15359.548987] vethedbd56d: renamed from eth0
+[15359.563584] docker0: port 1(veth669563e) entered disabled state
+[15359.563910] device veth669563e left promiscuous mode
+[15359.563913] docker0: port 1(veth669563e) entered disabled state
+[15359.736659] aufs au_opts_verify:1597:dockerd[6316]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15359.739444] device vethe6ede06 entered promiscuous mode
+[15359.739492] IPv6: ADDRCONF(NETDEV_UP): vethe6ede06: link is not ready
+[15359.739495] docker0: port 1(vethe6ede06) entered forwarding state
+[15359.739499] docker0: port 1(vethe6ede06) entered forwarding state
+[15359.834690] eth0: renamed from veth89d0efd
+[15359.834870] IPv6: ADDRCONF(NETDEV_CHANGE): vethe6ede06: link becomes ready
+[15359.925103] docker0: port 1(vethe6ede06) entered disabled state
+[15359.925143] veth89d0efd: renamed from eth0
+[15359.939444] docker0: port 1(vethe6ede06) entered disabled state
+[15359.939689] device vethe6ede06 left promiscuous mode
+[15359.939691] docker0: port 1(vethe6ede06) entered disabled state
+[15360.314682] aufs au_opts_verify:1597:dockerd[6326]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15360.317696] device vethcfab504 entered promiscuous mode
+[15360.317752] IPv6: ADDRCONF(NETDEV_UP): vethcfab504: link is not ready
+[15360.317756] docker0: port 1(vethcfab504) entered forwarding state
+[15360.317760] docker0: port 1(vethcfab504) entered forwarding state
+[15360.317773] docker0: port 1(vethcfab504) entered disabled state
+[15360.410884] eth0: renamed from vethb68b56c
+[15360.411139] IPv6: ADDRCONF(NETDEV_CHANGE): vethcfab504: link becomes ready
+[15360.411157] docker0: port 1(vethcfab504) entered forwarding state
+[15360.411162] docker0: port 1(vethcfab504) entered forwarding state
+[15360.499037] docker0: port 1(vethcfab504) entered disabled state
+[15360.499089] vethb68b56c: renamed from eth0
+[15360.511659] docker0: port 1(vethcfab504) entered disabled state
+[15360.511918] device vethcfab504 left promiscuous mode
+[15360.511920] docker0: port 1(vethcfab504) entered disabled state
+[15361.288460] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15361.291172] device veth3a19758 entered promiscuous mode
+[15361.291225] IPv6: ADDRCONF(NETDEV_UP): veth3a19758: link is not ready
+[15361.291228] docker0: port 1(veth3a19758) entered forwarding state
+[15361.291232] docker0: port 1(veth3a19758) entered forwarding state
+[15361.291244] docker0: port 1(veth3a19758) entered disabled state
+[15361.382748] eth0: renamed from veth1ec0caf
+[15361.382956] IPv6: ADDRCONF(NETDEV_CHANGE): veth3a19758: link becomes ready
+[15361.382973] docker0: port 1(veth3a19758) entered forwarding state
+[15361.382978] docker0: port 1(veth3a19758) entered forwarding state
+[15361.464563] docker0: port 1(veth3a19758) entered disabled state
+[15361.464603] veth1ec0caf: renamed from eth0
+[15361.480535] docker0: port 1(veth3a19758) entered disabled state
+[15361.480771] device veth3a19758 left promiscuous mode
+[15361.480773] docker0: port 1(veth3a19758) entered disabled state
+[15363.053572] aufs au_opts_verify:1597:dockerd[6313]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15363.059261] device vethb333db9 entered promiscuous mode
+[15363.059310] IPv6: ADDRCONF(NETDEV_UP): vethb333db9: link is not ready
+[15363.059314] docker0: port 1(vethb333db9) entered forwarding state
+[15363.059318] docker0: port 1(vethb333db9) entered forwarding state
+[15363.059331] docker0: port 1(vethb333db9) entered disabled state
+[15363.150875] eth0: renamed from vethb536bd1
+[15363.151072] IPv6: ADDRCONF(NETDEV_CHANGE): vethb333db9: link becomes ready
+[15363.151089] docker0: port 1(vethb333db9) entered forwarding state
+[15363.151094] docker0: port 1(vethb333db9) entered forwarding state
+[15363.232007] docker0: port 1(vethb333db9) entered disabled state
+[15363.232118] vethb536bd1: renamed from eth0
+[15363.247789] docker0: port 1(vethb333db9) entered disabled state
+[15363.248040] device vethb333db9 left promiscuous mode
+[15363.248042] docker0: port 1(vethb333db9) entered disabled state
+[15366.419668] aufs au_opts_verify:1597:dockerd[6316]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15366.423987] device vethbd59c4e entered promiscuous mode
+[15366.424035] IPv6: ADDRCONF(NETDEV_UP): vethbd59c4e: link is not ready
+[15366.519082] eth0: renamed from veth3874807
+[15366.519284] IPv6: ADDRCONF(NETDEV_CHANGE): vethbd59c4e: link becomes ready
+[15366.519322] docker0: port 1(vethbd59c4e) entered forwarding state
+[15366.519328] docker0: port 1(vethbd59c4e) entered forwarding state
+[15366.609421] docker0: port 1(vethbd59c4e) entered disabled state
+[15366.609457] veth3874807: renamed from eth0
+[15366.623646] docker0: port 1(vethbd59c4e) entered disabled state
+[15366.623892] device vethbd59c4e left promiscuous mode
+[15366.623894] docker0: port 1(vethbd59c4e) entered disabled state
+[15372.998897] aufs au_opts_verify:1597:dockerd[6318]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15373.004304] device veth1e97ead entered promiscuous mode
+[15373.004359] IPv6: ADDRCONF(NETDEV_UP): veth1e97ead: link is not ready
+[15373.102849] eth0: renamed from veth6097b1c
+[15373.103076] IPv6: ADDRCONF(NETDEV_CHANGE): veth1e97ead: link becomes ready
+[15373.103104] docker0: port 1(veth1e97ead) entered forwarding state
+[15373.103109] docker0: port 1(veth1e97ead) entered forwarding state
+[15373.189962] docker0: port 1(veth1e97ead) entered disabled state
+[15373.190008] veth6097b1c: renamed from eth0
+[15373.203644] docker0: port 1(veth1e97ead) entered disabled state
+[15373.203913] device veth1e97ead left promiscuous mode
+[15373.203915] docker0: port 1(veth1e97ead) entered disabled state
+[15385.979602] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15385.984084] device vetheb97b54 entered promiscuous mode
+[15385.984131] IPv6: ADDRCONF(NETDEV_UP): vetheb97b54: link is not ready
+[15386.078818] eth0: renamed from veth5739b4d
+[15386.078988] IPv6: ADDRCONF(NETDEV_CHANGE): vetheb97b54: link becomes ready
+[15386.079004] docker0: port 1(vetheb97b54) entered forwarding state
+[15386.079009] docker0: port 1(vetheb97b54) entered forwarding state
+[15386.168562] docker0: port 1(vetheb97b54) entered disabled state
+[15386.168601] veth5739b4d: renamed from eth0
+[15386.182909] docker0: port 1(vetheb97b54) entered disabled state
+[15386.183152] device vetheb97b54 left promiscuous mode
+[15386.183154] docker0: port 1(vetheb97b54) entered disabled state
+[15408.628784] aufs au_opts_verify:1597:dockerd[6313]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15408.643493] aufs au_opts_verify:1597:dockerd[6313]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15408.657185] aufs au_opts_verify:1597:dockerd[6313]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15408.661521] device vethfe3e893 entered promiscuous mode
+[15408.661569] IPv6: ADDRCONF(NETDEV_UP): vethfe3e893: link is not ready
+[15408.750956] eth0: renamed from vethe0297a7
+[15408.751159] IPv6: ADDRCONF(NETDEV_CHANGE): vethfe3e893: link becomes ready
+[15408.751175] docker0: port 1(vethfe3e893) entered forwarding state
+[15408.751181] docker0: port 1(vethfe3e893) entered forwarding state
+[15408.843661] docker0: port 1(vethfe3e893) entered disabled state
+[15408.843702] vethe0297a7: renamed from eth0
+[15408.855597] docker0: port 1(vethfe3e893) entered disabled state
+[15408.855859] device vethfe3e893 left promiscuous mode
+[15408.855861] docker0: port 1(vethfe3e893) entered disabled state
+[15408.930374] aufs au_opts_verify:1597:dockerd[6316]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15408.933469] device veth65fc58b entered promiscuous mode
+[15408.933513] IPv6: ADDRCONF(NETDEV_UP): veth65fc58b: link is not ready
+[15408.933517] docker0: port 1(veth65fc58b) entered forwarding state
+[15408.933530] docker0: port 1(veth65fc58b) entered forwarding state
+[15409.022837] eth0: renamed from vetha23ee59
+[15409.023029] IPv6: ADDRCONF(NETDEV_CHANGE): veth65fc58b: link becomes ready
+[15409.106270] docker0: port 1(veth65fc58b) entered disabled state
+[15409.106312] vetha23ee59: renamed from eth0
+[15409.119781] docker0: port 1(veth65fc58b) entered disabled state
+[15409.120032] device veth65fc58b left promiscuous mode
+[15409.120034] docker0: port 1(veth65fc58b) entered disabled state
+[15409.294842] aufs au_opts_verify:1597:dockerd[6313]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15409.298454] device veth1d28660 entered promiscuous mode
+[15409.298518] IPv6: ADDRCONF(NETDEV_UP): veth1d28660: link is not ready
+[15409.298522] docker0: port 1(veth1d28660) entered forwarding state
+[15409.298526] docker0: port 1(veth1d28660) entered forwarding state
+[15409.390917] eth0: renamed from veth474b38d
+[15409.391112] IPv6: ADDRCONF(NETDEV_CHANGE): veth1d28660: link becomes ready
+[15409.472207] docker0: port 1(veth1d28660) entered disabled state
+[15409.472257] veth474b38d: renamed from eth0
+[15409.487615] docker0: port 1(veth1d28660) entered disabled state
+[15409.487850] device veth1d28660 left promiscuous mode
+[15409.487852] docker0: port 1(veth1d28660) entered disabled state
+[15409.861571] aufs au_opts_verify:1597:dockerd[6316]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15409.864329] device veth36a77b9 entered promiscuous mode
+[15409.864385] IPv6: ADDRCONF(NETDEV_UP): veth36a77b9: link is not ready
+[15409.864388] docker0: port 1(veth36a77b9) entered forwarding state
+[15409.864393] docker0: port 1(veth36a77b9) entered forwarding state
+[15409.864423] docker0: port 1(veth36a77b9) entered disabled state
+[15409.954863] eth0: renamed from veth7fbb245
+[15409.955053] IPv6: ADDRCONF(NETDEV_CHANGE): veth36a77b9: link becomes ready
+[15409.955068] docker0: port 1(veth36a77b9) entered forwarding state
+[15409.955074] docker0: port 1(veth36a77b9) entered forwarding state
+[15410.039510] docker0: port 1(veth36a77b9) entered disabled state
+[15410.039548] veth7fbb245: renamed from eth0
+[15410.051645] docker0: port 1(veth36a77b9) entered disabled state
+[15410.051920] device veth36a77b9 left promiscuous mode
+[15410.051923] docker0: port 1(veth36a77b9) entered disabled state
+[15410.827818] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15410.831502] device vethe3ee4ee entered promiscuous mode
+[15410.831550] IPv6: ADDRCONF(NETDEV_UP): vethe3ee4ee: link is not ready
+[15410.831553] docker0: port 1(vethe3ee4ee) entered forwarding state
+[15410.831557] docker0: port 1(vethe3ee4ee) entered forwarding state
+[15410.832026] docker0: port 1(vethe3ee4ee) entered disabled state
+[15410.922673] eth0: renamed from vethc7f788a
+[15410.922867] IPv6: ADDRCONF(NETDEV_CHANGE): vethe3ee4ee: link becomes ready
+[15410.922882] docker0: port 1(vethe3ee4ee) entered forwarding state
+[15410.922887] docker0: port 1(vethe3ee4ee) entered forwarding state
+[15411.012896] docker0: port 1(vethe3ee4ee) entered disabled state
+[15411.012935] vethc7f788a: renamed from eth0
+[15411.027670] docker0: port 1(vethe3ee4ee) entered disabled state
+[15411.027919] device vethe3ee4ee left promiscuous mode
+[15411.027921] docker0: port 1(vethe3ee4ee) entered disabled state
+[15412.599950] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15412.602866] device veth8f87d3c entered promiscuous mode
+[15412.602925] IPv6: ADDRCONF(NETDEV_UP): veth8f87d3c: link is not ready
+[15412.602929] docker0: port 1(veth8f87d3c) entered forwarding state
+[15412.602933] docker0: port 1(veth8f87d3c) entered forwarding state
+[15412.602946] docker0: port 1(veth8f87d3c) entered disabled state
+[15412.706802] eth0: renamed from veth76ff234
+[15412.706994] IPv6: ADDRCONF(NETDEV_CHANGE): veth8f87d3c: link becomes ready
+[15412.707010] docker0: port 1(veth8f87d3c) entered forwarding state
+[15412.707015] docker0: port 1(veth8f87d3c) entered forwarding state
+[15412.790977] docker0: port 1(veth8f87d3c) entered disabled state
+[15412.791054] veth76ff234: renamed from eth0
+[15412.803088] docker0: port 1(veth8f87d3c) entered disabled state
+[15412.803365] device veth8f87d3c left promiscuous mode
+[15412.803367] docker0: port 1(veth8f87d3c) entered disabled state
+[15415.978465] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15415.984268] device vethf2ad10c entered promiscuous mode
+[15415.984937] IPv6: ADDRCONF(NETDEV_UP): vethf2ad10c: link is not ready
+[15416.070700] eth0: renamed from vetha3ffed3
+[15416.070909] IPv6: ADDRCONF(NETDEV_CHANGE): vethf2ad10c: link becomes ready
+[15416.070925] docker0: port 1(vethf2ad10c) entered forwarding state
+[15416.070930] docker0: port 1(vethf2ad10c) entered forwarding state
+[15416.157784] docker0: port 1(vethf2ad10c) entered disabled state
+[15416.157836] vetha3ffed3: renamed from eth0
+[15416.171691] docker0: port 1(vethf2ad10c) entered disabled state
+[15416.171939] device vethf2ad10c left promiscuous mode
+[15416.171941] docker0: port 1(vethf2ad10c) entered disabled state
+[15422.545472] aufs au_opts_verify:1597:dockerd[6313]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15422.549898] device vethddec1db entered promiscuous mode
+[15422.549947] IPv6: ADDRCONF(NETDEV_UP): vethddec1db: link is not ready
+[15422.634968] eth0: renamed from veth0e300f5
+[15422.635169] IPv6: ADDRCONF(NETDEV_CHANGE): vethddec1db: link becomes ready
+[15422.635184] docker0: port 1(vethddec1db) entered forwarding state
+[15422.635190] docker0: port 1(vethddec1db) entered forwarding state
+[15422.717923] docker0: port 1(vethddec1db) entered disabled state
+[15422.717962] veth0e300f5: renamed from eth0
+[15422.731607] docker0: port 1(vethddec1db) entered disabled state
+[15422.731857] device vethddec1db left promiscuous mode
+[15422.731859] docker0: port 1(vethddec1db) entered disabled state
+[15435.505276] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15435.509827] device veth567c9e4 entered promiscuous mode
+[15435.509876] IPv6: ADDRCONF(NETDEV_UP): veth567c9e4: link is not ready
+[15435.602775] eth0: renamed from vethedb12b5
+[15435.602966] IPv6: ADDRCONF(NETDEV_CHANGE): veth567c9e4: link becomes ready
+[15435.602982] docker0: port 1(veth567c9e4) entered forwarding state
+[15435.602988] docker0: port 1(veth567c9e4) entered forwarding state
+[15435.688652] docker0: port 1(veth567c9e4) entered disabled state
+[15435.688688] vethedb12b5: renamed from eth0
+[15435.703479] docker0: port 1(veth567c9e4) entered disabled state
+[15435.703723] device veth567c9e4 left promiscuous mode
+[15435.703725] docker0: port 1(veth567c9e4) entered disabled state
+[15461.276360] aufs au_opts_verify:1597:dockerd[6316]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15461.281581] device veth0a3bf84 entered promiscuous mode
+[15461.281643] IPv6: ADDRCONF(NETDEV_UP): veth0a3bf84: link is not ready
+[15461.375056] eth0: renamed from veth1d8b876
+[15461.375258] IPv6: ADDRCONF(NETDEV_CHANGE): veth0a3bf84: link becomes ready
+[15461.375275] docker0: port 1(veth0a3bf84) entered forwarding state
+[15461.375281] docker0: port 1(veth0a3bf84) entered forwarding state
+[15461.457931] docker0: port 1(veth0a3bf84) entered disabled state
+[15461.457974] veth1d8b876: renamed from eth0
+[15461.471454] docker0: port 1(veth0a3bf84) entered disabled state
+[15461.471700] device veth0a3bf84 left promiscuous mode
+[15461.471702] docker0: port 1(veth0a3bf84) entered disabled state
+[15512.646629] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15512.651227] device vethc0e9462 entered promiscuous mode
+[15512.651276] IPv6: ADDRCONF(NETDEV_UP): vethc0e9462: link is not ready
+[15512.742814] eth0: renamed from veth6f570e2
+[15512.743000] IPv6: ADDRCONF(NETDEV_CHANGE): vethc0e9462: link becomes ready
+[15512.743017] docker0: port 1(vethc0e9462) entered forwarding state
+[15512.743023] docker0: port 1(vethc0e9462) entered forwarding state
+[15512.831980] docker0: port 1(vethc0e9462) entered disabled state
+[15512.832018] veth6f570e2: renamed from eth0
+[15512.847356] docker0: port 1(vethc0e9462) entered disabled state
+[15512.847625] device vethc0e9462 left promiscuous mode
+[15512.847627] docker0: port 1(vethc0e9462) entered disabled state
+[15615.222168] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15615.226608] device vethf29f973 entered promiscuous mode
+[15615.226654] IPv6: ADDRCONF(NETDEV_UP): vethf29f973: link is not ready
+[15615.314714] eth0: renamed from vethddf9fee
+[15615.314953] IPv6: ADDRCONF(NETDEV_CHANGE): vethf29f973: link becomes ready
+[15615.314969] docker0: port 1(vethf29f973) entered forwarding state
+[15615.314986] docker0: port 1(vethf29f973) entered forwarding state
+[15615.404359] docker0: port 1(vethf29f973) entered disabled state
+[15615.404398] vethddf9fee: renamed from eth0
+[15615.419253] docker0: port 1(vethf29f973) entered disabled state
+[15615.419489] device vethf29f973 left promiscuous mode
+[15615.419491] docker0: port 1(vethf29f973) entered disabled state
+[15650.557275] aufs au_opts_verify:1597:dockerd[6326]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15650.572302] aufs au_opts_verify:1597:dockerd[6326]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15650.589394] aufs au_opts_verify:1597:dockerd[6326]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15650.593313] device vetha22ae64 entered promiscuous mode
+[15650.593359] IPv6: ADDRCONF(NETDEV_UP): vetha22ae64: link is not ready
+[15650.691036] eth0: renamed from vethbd9ac68
+[15650.691243] IPv6: ADDRCONF(NETDEV_CHANGE): vetha22ae64: link becomes ready
+[15650.691260] docker0: port 1(vetha22ae64) entered forwarding state
+[15650.691266] docker0: port 1(vetha22ae64) entered forwarding state
+[15665.696116] docker0: port 1(vetha22ae64) entered forwarding state
+[15820.237387] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[15820.242879] device veth2dda892 entered promiscuous mode
+[15820.242920] IPv6: ADDRCONF(NETDEV_UP): veth2dda892: link is not ready
+[15820.426894] eth0: renamed from veth26be692
+[15820.427276] IPv6: ADDRCONF(NETDEV_CHANGE): veth2dda892: link becomes ready
+[15820.427292] docker0: port 2(veth2dda892) entered forwarding state
+[15820.427297] docker0: port 2(veth2dda892) entered forwarding state
+[15820.594815] docker0: port 2(veth2dda892) entered disabled state
+[15820.594861] veth26be692: renamed from eth0
+[15820.608202] docker0: port 2(veth2dda892) entered disabled state
+[15820.608492] device veth2dda892 left promiscuous mode
+[15820.608494] docker0: port 2(veth2dda892) entered disabled state
+[16230.174483] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[16230.179103] device vethc339057 entered promiscuous mode
+[16230.179152] IPv6: ADDRCONF(NETDEV_UP): vethc339057: link is not ready
+[16230.270801] eth0: renamed from veth1924cc0
+[16230.270989] IPv6: ADDRCONF(NETDEV_CHANGE): vethc339057: link becomes ready
+[16230.271003] docker0: port 2(vethc339057) entered forwarding state
+[16230.271008] docker0: port 2(vethc339057) entered forwarding state
+[16230.356074] docker0: port 2(vethc339057) entered disabled state
+[16230.356118] veth1924cc0: renamed from eth0
+[16230.371833] docker0: port 2(vethc339057) entered disabled state
+[16230.372216] device vethc339057 left promiscuous mode
+[16230.372219] docker0: port 2(vethc339057) entered disabled state
+[17049.545446] aufs au_opts_verify:1597:dockerd[7577]: dirperm1 breaks the protection by the permission bits on the lower branch
+[17049.550082] device veth4d74973 entered promiscuous mode
+[17049.550127] IPv6: ADDRCONF(NETDEV_UP): veth4d74973: link is not ready
+[17049.634686] eth0: renamed from vethc7757d0
+[17049.634867] IPv6: ADDRCONF(NETDEV_CHANGE): veth4d74973: link becomes ready
+[17049.634881] docker0: port 2(veth4d74973) entered forwarding state
+[17049.634886] docker0: port 2(veth4d74973) entered forwarding state
+[17049.709306] docker0: port 2(veth4d74973) entered disabled state
+[17049.709348] vethc7757d0: renamed from eth0
+[17049.723146] docker0: port 2(veth4d74973) entered disabled state
+[17049.723410] device veth4d74973 left promiscuous mode
+[17049.723412] docker0: port 2(veth4d74973) entered disabled state
+[18688.098317] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[18688.102895] device veth5667255 entered promiscuous mode
+[18688.102942] IPv6: ADDRCONF(NETDEV_UP): veth5667255: link is not ready
+[18688.194734] eth0: renamed from veth895a765
+[18688.194956] IPv6: ADDRCONF(NETDEV_CHANGE): veth5667255: link becomes ready
+[18688.194971] docker0: port 2(veth5667255) entered forwarding state
+[18688.194976] docker0: port 2(veth5667255) entered forwarding state
+[18688.278090] docker0: port 2(veth5667255) entered disabled state
+[18688.278132] veth895a765: renamed from eth0
+[18688.291834] docker0: port 2(veth5667255) entered disabled state
+[18688.292250] device veth5667255 left promiscuous mode
+[18688.292252] docker0: port 2(veth5667255) entered disabled state
+[21965.067152] aufs au_opts_verify:1597:dockerd[28391]: dirperm1 breaks the protection by the permission bits on the lower branch
+[21965.071711] device veth8c540c2 entered promiscuous mode
+[21965.071753] IPv6: ADDRCONF(NETDEV_UP): veth8c540c2: link is not ready
+[21965.162766] eth0: renamed from veth15a483c
+[21965.162997] IPv6: ADDRCONF(NETDEV_CHANGE): veth8c540c2: link becomes ready
+[21965.163012] docker0: port 2(veth8c540c2) entered forwarding state
+[21965.163017] docker0: port 2(veth8c540c2) entered forwarding state
+[21965.248285] docker0: port 2(veth8c540c2) entered disabled state
+[21965.248333] veth15a483c: renamed from eth0
+[21965.263397] docker0: port 2(veth8c540c2) entered disabled state
+[21965.263640] device veth8c540c2 left promiscuous mode
+[21965.263642] docker0: port 2(veth8c540c2) entered disabled state
+[22475.932025] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[22475.948908] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[22475.962054] aufs au_opts_verify:1597:dockerd[6327]: dirperm1 breaks the protection by the permission bits on the lower branch
+[22475.966162] device vethe5c51c8 entered promiscuous mode
+[22475.966205] IPv6: ADDRCONF(NETDEV_UP): vethe5c51c8: link is not ready
+[22476.046773] eth0: renamed from veth25c358e
+[22476.046980] IPv6: ADDRCONF(NETDEV_CHANGE): vethe5c51c8: link becomes ready
+[22476.046995] docker0: port 2(vethe5c51c8) entered forwarding state
+[22476.047001] docker0: port 2(vethe5c51c8) entered forwarding state
+[22491.072093] docker0: port 2(vethe5c51c8) entered forwarding state

@@ -16,3 +16,6 @@ RUN wget https://bootstrap.pypa.io/ez_setup.py
 RUN python ez_setup.py
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
+
+ADD Dockerfile /opt/Dockerfile.add
+COPY Dockerfile /opt/Dockerfile.copy

@@ -1,0 +1,122 @@
+    1  ls
+    2  cd ex02/
+    3  ll
+    4  rm .Dockerfile.swp
+    5  vi Dockerfile
+    6  docker build -t ex02:0.1 .
+    7  vi Dockerfile:
+    8  vi Dockerfile
+    9  docker build -t ex02:0.1 .
+   10  vi Dockerfile
+   11  docker build -t ex02:0.1 .
+   12  cd
+   13  mkdir phpbb
+   14* cd phpbb/d0
+   15  vi Dockerfile
+   16  docker build -p 80:80 -t phpbb:1.0 . 
+   17  docker build -t phpbb:1.0 . 
+   18  docker run -d --restart always --name phpbb -p 8000:80 phpbb:1.0
+   19  curl icanhazíp.com
+   20  curl icanhazip.com
+   21  cd ..
+   22  ll
+   23  mkdir ex03
+   24  cd ex03/
+   25  ll
+   26  vi Dockerfile
+   27  docker build -t ex03:1.0 .
+   28  vi Dockerfile
+   29  docker build -t ex03:1.0 .
+   30  vi Dockerfile
+   31  docker build -t ex03:1.0 .
+   32  docker image ls
+   33  docker run -d --restart always -p 80:80 ex03:1.0
+   34  docker run -d --restart always -p 80:80 ex03:1.0 /bin/bash
+   35  vi Dockerfile 
+   36  docker build -t ex03:1.0 .
+   37  docker run -d --restart always -p 80:80 ex03:1.0 /bin/bash
+   38  systemctl start httpd
+   39  rpm -qa | grep http
+   40  docker run -ti -p 80:80 ex03:1.0 /bin/bash
+   41  vi Dockerfile 
+   42  docker build -t ex03:1.0 .
+   43  docker run -d --restart always -p 80:80 ex03:1.0 
+   44  ps -ef | grép http
+   45  ps -ef | grep http
+   46  docker ps
+   47  docker container kill 16aa01ccda2e
+   48  docker run -d --restart always -p 8001:80 ex03:1.0 
+   49  docker ps
+   50  docker container kill 24ecd55095d4
+   51  docker ps
+   52  docker run -d --restart always -p 80:80 ex03:1.0 
+   53  docker ps
+   54  docker kill d9e1b68387e8
+   55  docker ps
+   56  docker kill 5d5c68a2fbb6 6ba9775b8b24
+   57  docker build -t ex03:1.0 .
+   58  docker run -d --restart always -p 80:80 ex03:1.0 /bin/bash
+   59  ps -ef
+   60  dock ps
+   61  docker ps
+   62  docker kill e66d24bdca66
+   63  docker run -ti --restart always -p 80:80 ex03:1.0 /bin/bash
+   64  docker run -d -p 5000:5000 --restart=always --name registry:2
+   65  docker container run -d -p 5000:5000 --restart=always --name registry registry:2
+   66  docker images
+   67  docker tag ex02:0.1 localhost:5000/my_python:1.0
+   68  docker push localhost:5000/my_python:1.0
+   69  docker image rm -f localhost:5000/my_python:1.0
+   70  docker pull localhost:5000/my_python:1.0
+   71  docker image ls
+   72  df
+   73  cd ../
+   74  cd 2017/
+   75  history >> hist.txt
+   76  cd ..
+   77  ll
+   78  mv ex0* phpbb 2017/
+   79  ll
+   80  git clone https://github.com/fcandido/docker-day2.git
+   81  ls
+   82  cd docker-day2/
+   83  ls
+   84  touch giropops
+   85  git add giropops
+   86  dit commit -m "ops" giropops 
+   87  git commit -m "ops" giropops 
+   88  git push
+   89  cd ;;
+   90  cd ..
+   91  mv 2017 docker-day2/
+   92  cd docker-day2/
+   93  git add 2017
+   94  git commit -m "2017" 2017
+   95  git push 2017
+   96  git push 
+   97  mkdir app
+   98  ll
+   99  mv app 2017/
+  100  cd 2017/
+  101  pwd
+  102  cd app/
+  103  pwd
+  104  echo docker container run -ti 
+  105  cd ..
+  106  docker container run -ti -v app:/app ubuntu
+  107  pwd
+  108  docker container run -ti -v /root/docker-day2/2017/app:/app ubuntu
+  109  ll
+  110  cd ..
+  111  ll
+  112  cd appserver/
+  113  ll
+  114  cat Dockerfile 
+  115  ll
+  116  docker container create -v /dados --name dados ubuntu
+  117  docker run -ti --volumes-from dados ubuntu
+  118  cd ..
+  119  ll
+  120  cd docker-day2/
+  121  cd 2017/
+  122  history > hist2.txt 
